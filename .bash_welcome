@@ -1,0 +1,15 @@
+if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
+    echo ""
+    echo "wesh"
+    echo ""
+elif [[ "$penduick_server" =~ "$(uname -n)" ]]; then
+    echo ""
+    echo "You're in penduick. Welcome!"
+    echo ""
+elif [[ "$midway_server" =~ "$(uname -n)" ]]; then
+    echo ""
+    echo "You're in midway 2. Welcome!"
+    echo ""
+else
+    echo "You're here. Welcome!"
+fi
