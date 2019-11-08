@@ -22,8 +22,6 @@ alias mkdirp="mkdir -p"
 alias ea="vim ~/.bash_aliases"
 alias ei="vim ~/.inputrc"
 alias eb="vim ~/.bashrc"
-alias ep="vim ~/.bash_prompt"
-alias et="vim ~/.talon/user/"
 alias ev="vim ~/.vimrc"
 alias sb="source ~/.bash_profile"
 
@@ -49,10 +47,19 @@ fi
 if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/; set_anvio_paths /project2/meren/VIRTUAL-ENVS/anvio-master"
 	alias meren="cd /project2/meren"
-	alias wd="cd /project2/meren/RESOURCES/METAGENOMES/GUT/190723_MIN_Run_9/ANALYSIS"
+	alias wd="cd /project2/meren/"
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \"clusterize -j={rule} -o={log} -e={log} -n={threads} -x\" --jobs FIXME --resource nodes=FIXME --latency-wait 100'"
+	alias cl="clusterize"
+	alias clh="column -t ~/.clusterize_history | tail"
+	alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %C %6m %8e %8d'; echo ; \
+		squeue --partition=meren -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
+		squeue --partition=meren --user=$USER -O 'arrayjobid:13,name:35,stdout:120'"
+	alias qe="squeue --user=trigodet -o '%10i %30j %5u %8T %10M %9l %6D %R %5C %13m %15N'"
+	alias sc="scancel"
+	alias si="sinteractive --partition=meren --time=08:00:00"
+
 fi
 
 # -----------------------------------------------------------------------------
