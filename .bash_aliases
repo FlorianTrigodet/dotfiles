@@ -4,6 +4,21 @@
 
 alias les='less -S'
 alias ll='ls -alh'
+alias yu="yadm add -u; yadm commit -m '$(date)'; yadm push origin master"
+alias ss="screen -S"
+alias sls="screen -ls"
+alias sx="screen -x"
+alias sr="screen -r"
+alias h="head -n"
+alias t="tail -n"
+alias col="column -t"
+alias tlf="tail -f"
+alias rmrf="rm -rf"
+alias tarp="tar -zcvf"
+alias untarp="tar -zxvf"
+alias dush="du -sh"
+alias rl="readlink -f"
+alias mkdirp="mkdir -p"
 
 
 # -----------------------------------------------------------------------------
