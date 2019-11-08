@@ -46,8 +46,8 @@ fi
 # specific to midway
 if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/; set_anvio_paths /project2/meren/VIRTUAL-ENVS/anvio-master"
-	alias meren="cd /project2/meren"
-	alias wd="cd /project2/meren/"
+	alias ml="cd /project2/meren"
+	alias wd="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples/ASSEMBLY_Alistipes/"
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \"clusterize -j={rule} -o={log} -e={log} -n={threads} -x\" --jobs FIXME --resource nodes=FIXME --latency-wait 100'"
