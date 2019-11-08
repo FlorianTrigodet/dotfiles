@@ -19,6 +19,13 @@ alias untarp="tar -zxvf"
 alias dush="du -sh"
 alias rl="readlink -f"
 alias mkdirp="mkdir -p"
+alias ea="vim ~/.bash_aliases"
+alias ei="vim ~/.inputrc"
+alias eb="vim ~/.bashrc"
+alias ep="vim ~/.bash_prompt"
+alias et="vim ~/.talon/user/"
+alias ev="vim ~/.vimrc"
+alias sb="source ~/.bash_profile"
 
 
 # -----------------------------------------------------------------------------
