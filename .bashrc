@@ -72,6 +72,10 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 
 	# git pull anvio-master
 	cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -
+
+	# add to the path
+	PATH=$PATH:$HOME/.local/bin:$HOME/bin
+	export PATH
 fi
 
 # -----------------------------------------------------------------------------
