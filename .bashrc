@@ -74,10 +74,11 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -
 
 	# add some programs to the PATH variable
-	export PATH=$PATH:/project2/meren/MERENLAB-PUBLIC/SOFTWARE/minimap2
-	export PATH=$PATH:/project2/meren/MERENLAB-PUBLIC/SOFTWARE/sratoolkit.2.9.6-1-centos_linux64/bin
-	export PATH=$PATH:/project2/meren/MERENLAB-PUBLIC/SOFTWARE/SPAdes-3.13.0-Linux/bin
+	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/minimap2
+	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/sratoolkit.2.9.6-1-centos_linux64/bin
+	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/SPAdes-3.13.0-Linux/bin
 fi
+
 
 # -----------------------------------------------------------------------------
 # }}} Penduick {{{
