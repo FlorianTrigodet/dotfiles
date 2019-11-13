@@ -40,6 +40,10 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	fi
 	unset __conda_setup
 	# <<< conda init <<<
+	
+	# >>> ANVI'O STUFF >>>
+	alias anvi-activate-master="source ~/virtual-envs/anvio-master/bin/activate"
+	# <<< ANVI'O STUFF <<<
 fi
 
 # -----------------------------------------------------------------------------
