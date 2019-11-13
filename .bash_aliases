@@ -59,7 +59,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 		squeue --partition=meren --user=$USER -O 'arrayjobid:13,name:35,stdout:120'"
 	alias qe="squeue --user=trigodet -o '%10i %30j %5u %8T %10M %9l %6D %R %5C %13m %15N'"
 	alias sc="scancel"
-	alias si="sinteractive --partition=meren --time=08:00:00"
+	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G"
 
 fi
 
