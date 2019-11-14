@@ -81,6 +81,13 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/minimap2
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/sratoolkit.2.9.6-1-centos_linux64/bin
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/SPAdes-3.13.0-Linux/bin
+
+	# perl stuff
+	PATH="/home/trigodet/perl5/bin${PATH:+:${PATH}}"; export PATH;
+	PERL5LIB="/home/trigodet/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+	PERL_LOCAL_LIB_ROOT="/home/trigodet/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+	PERL_MB_OPT="--install_base \"/home/trigodet/perl5\""; export PERL_MB_OPT;
+	PERL_MM_OPT="INSTALL_BASE=/home/trigodet/perl5"; export PERL_MM_OPT;
 fi
 
 
