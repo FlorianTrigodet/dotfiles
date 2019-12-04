@@ -72,5 +72,5 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	alias scratch='cd /scratch/work/florian'
 	alias bioware='cd /usr/local/bioware/'
 	alias wd='cd /scratch/work/florian/mydata/corrosion/fixed_potential/metatranscriptomes'
-	alias anvi='module load Anvio-master'
+	alias anvi-module='module load Anvio-master'
 fi
