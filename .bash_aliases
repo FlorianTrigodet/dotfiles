@@ -37,7 +37,7 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-anvio='ssh -L 8090:localhost:8090 trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
-	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | python3 ~/.ssh/run_webbrowser.py'
+	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
 fi
 
 # -----------------------------------------------------------------------------
