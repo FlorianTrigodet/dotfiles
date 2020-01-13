@@ -34,6 +34,7 @@ alias sb="source ~/.bash_profile"
 # specific to my macbook
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias wd="cd /Users/frigodet/Documents/PROJET/PHD/FIXED_POTENTIAL/fixed_potential/metagenomes/metatranscriptomic"
+	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-anvio='ssh -L 8090:localhost:8090 trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
