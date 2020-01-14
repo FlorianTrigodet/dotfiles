@@ -34,6 +34,8 @@ alias sb="source ~/.bash_profile"
 # specific to my macbook
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias wd="cd /Users/frigodet/Documents/PROJET/PHD/FIXED_POTENTIAL/fixed_potential/metagenomes/metatranscriptomic"
+	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
+	alias oligotyping-activate-3.7="source ~/virtual-envs/oligotyping-3.7/bin/activate"
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-anvio='ssh -L 8090:localhost:8090 trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
@@ -46,10 +48,15 @@ fi
 
 # specific to midway
 if [[ "$midway_server" =~ "$(uname -n)" ]]; then
-        alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+        alias anvi-activate-master="conda activate /project2/meren/shared/virtual-envs/anvio-master/"
 	alias oligotyping-activate-master="source /project2/meren/VIRTUAL-ENVS/oligotyping-master/bin/activate"
+	alias oligotyping-activate-3.7="source /project2/meren/shared/virtual-envs/oligotyping-python3.7/bin/activate"
 	alias ml="cd /project2/meren"
+<<<<<<< HEAD
 	alias wd="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples/PANGENOME_Akkermansia" 
+=======
+	alias wd="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples/PANGENOME_Akkermansia"
+>>>>>>> a635166c20be9696f0a21d6865ea6986892bf782
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \"clusterize -j={rule} -o={log} -n={threads} -x\" --jobs FIXME --resource nodes=FIXME --latency-wait 100'"
