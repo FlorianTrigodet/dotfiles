@@ -46,9 +46,9 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	unset __conda_setup
 	# <<< conda init <<<
 	
-	# >>> ANVI'O STUFF >>>
-	alias anvi-activate-master="source ~/virtual-envs/anvio-master/bin/activate"
-	# <<< ANVI'O STUFF <<<
+	export LDFLAGS="-L/usr/local/opt/ruby/lib"
+	export CPPFLAGS="-I/usr/local/opt/ruby/include"
+	export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 fi
 
 # -----------------------------------------------------------------------------
