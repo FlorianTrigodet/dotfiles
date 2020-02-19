@@ -51,7 +51,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 	alias oligotyping-activate-3.7="source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate"
 	alias ml="cd /project2/meren"
-	alias wd="cd /project2/meren/PROJECTS/ORAL/ASSEMBLY_HWM"
+	alias wd="cd /project2/meren/PROJECTS/ORAL/HMW_METHOD_PAPER"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples"
 
 	# easy way to remember to anvi-wokflow command
