@@ -49,6 +49,9 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
 	export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+
+	# add some stuff to the path
+	export PATH="/Users/frigodet/github/trimal/source:$PATH"
 fi
 
 # -----------------------------------------------------------------------------
