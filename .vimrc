@@ -12,7 +12,7 @@
 set nocompatible
 
 " ennable the use of mouse
-set mouse=a
+set mouse=v
 
 " add line number
 set number
