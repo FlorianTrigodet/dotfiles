@@ -25,7 +25,7 @@ alias ei="vim ~/.inputrc"
 alias eb="vim ~/.bashrc"
 alias ev="vim ~/.vimrc"
 alias sb="source ~/.bash_profile"
-
+alias sedt="sed 's/\t/ | /g'"
 
 # -----------------------------------------------------------------------------
 # }}} MY MACBOOK {{{
