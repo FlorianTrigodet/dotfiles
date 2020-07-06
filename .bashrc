@@ -91,6 +91,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/vsearch-2.14.1-linux-x86_64/bin
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/sratoolkit.2.9.6-1-centos_linux64/bin
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/SPAdes-3.13.0-Linux/bin	
+	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/idba-1.1.3/bin
 fi
 
 
