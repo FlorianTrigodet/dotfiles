@@ -86,6 +86,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -
 
 	# add some programs to the PATH variable
+	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/Flye/bin
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/minimap2
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/reads-for-assembly
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/vsearch-2.14.1-linux-x86_64/bin
