@@ -52,7 +52,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 	alias oligotyping-activate-3.7="source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate"
 	alias ml="cd /project2/meren && pwd"
-	alias wd="cd /project2/meren/PROJECTS/ORAL/HMW_METHOD_PAPER && pwd"
+	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/RC2/ && pwd"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
 	alias wdakk="cd /project2/meren/PEOPLE/trigodet/PANGENOMICS_AKKERMANSIA_NCBI && pwd"
 
