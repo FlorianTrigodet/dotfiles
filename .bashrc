@@ -60,7 +60,6 @@ fi
 
 if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	# load modules
-	module load Anaconda3/5.3.0
 	module load vim/8.1
 	module load rstudio/1.2.1335
 
