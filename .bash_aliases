@@ -33,7 +33,7 @@ alias sedt="sed 's/\t/ | /g'"
 
 # specific to my macbook
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
-	alias wd="cd /Users/frigodet/Documents/PROJET/UC_POUCHITIS/INVERSION" 
+	alias wd="cd /Users/frigodet/Documents/PROJET/UC_POUCHITIS/INVERSIONS" 
 	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
 	alias oligotyping-activate-3.7="source ~/virtual-envs/oligotyping-3.7/bin/activate"
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
@@ -52,7 +52,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 	alias oligotyping-activate-3.7="source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate"
 	alias ml="cd /project2/meren && pwd"
-	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/RC2/ && pwd"
+	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/INVERSIONS/ && pwd"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
 	alias wdakk="cd /project2/meren/PEOPLE/trigodet/PANGENOMICS_AKKERMANSIA_NCBI && pwd"
 
