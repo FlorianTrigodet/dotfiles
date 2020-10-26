@@ -33,7 +33,7 @@ alias sedt="sed 's/\t/ | /g'"
 
 # specific to my macbook
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
-	alias wd="cd /Users/frigodet/Documents/PROJET/PRODIGAL/INFANT-GUT-TUTORIAL"
+	alias wd="cd /Users/frigodet/Documents/PROJET/UC_POUCHITIS/INVERSION" 
 	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
 	alias oligotyping-activate-3.7="source ~/virtual-envs/oligotyping-3.7/bin/activate"
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
