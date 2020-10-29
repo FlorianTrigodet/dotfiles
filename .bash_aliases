@@ -55,6 +55,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/INVERSIONS/ && pwd"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
 	alias wdhmw="cd /project2/meren/PROJECTS/ORAL/HMW_METHOD_PAPER/SHORT_READS && pwd"
+        alias midway="ssh midway2-login2.rcc.local"
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \"clusterize -j={rule} -o={log} -n={threads} -x\" --jobs FIXME --resource nodes=FIXME --latency-wait 100'"
