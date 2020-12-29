@@ -1,5 +1,5 @@
 # find by typing `uname -n`
-export my_2019_macbook="MED42038.local:MED42038.lan"
+export my_2019_macbook="MED42038.local"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local"
 
@@ -23,6 +23,13 @@ fi
 # ls coloring
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Name terminal windows
+function named() {
+    printf "\e]1337;SetBadgeFormat=%s\a" $(echo "$1" | base64)
+    echo -ne "\033]0;"$1"\007"
+}
+
 
 # -----------------------------------------------------------------------------
 # }}} MY MACBOOK {{{
