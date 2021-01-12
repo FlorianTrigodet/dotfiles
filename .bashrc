@@ -89,6 +89,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 
 	# add some programs to the PATH variable
+	export PATH="$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/Flye/bin
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/minimap2
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/reads-for-assembly
