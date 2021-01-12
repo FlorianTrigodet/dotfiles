@@ -49,7 +49,7 @@ fi
 
 # specific to midway
 if [[ "$midway_server" =~ "$(uname -n)" ]]; then
-        alias anvi-activate-master="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+        alias anvi-activate-dev="conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/"
 	alias oligotyping-activate-3.7="source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate"
 	alias ml="cd /project2/meren && pwd"
 	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/INVERSIONS/ && pwd"
