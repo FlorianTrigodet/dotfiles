@@ -88,9 +88,6 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	# source the anvio port
 	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 
-	# git pull anvio-master
-	cd /project2/meren/VIRTUAL-ENVS/anvio-dev/anvio; git pull; cd -
-
 	# add some programs to the PATH variable
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/Flye/bin
 	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/minimap2
