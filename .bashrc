@@ -59,6 +59,9 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 
 	# add some stuff to the path
 	export PATH="/Users/frigodet/github/trimal/source:$PATH"
+
+	# remove zsh warning
+	export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
 
 # -----------------------------------------------------------------------------
