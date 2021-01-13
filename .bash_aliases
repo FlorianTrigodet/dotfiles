@@ -55,7 +55,7 @@ fi
 if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	anvi-activate-dev () {
 	    conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
-	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]>>>\[\e[m\] \[\e[0m\]"
+	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 	}
 	alias oligotyping-activate-3.7="source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate"
 	alias ml="cd /project2/meren && pwd"
