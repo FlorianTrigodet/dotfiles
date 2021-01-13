@@ -129,6 +129,10 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	unset __conda_setup
 	# <<< conda initialize <<<
 
+	# make it pretty
+	export PS1="\[\e[0m\e[40m\e[1;30m\] :: base :: \[\e[0m\e[40m\e[1;41m\] SSH://PENDUICK \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+
+
 	PATH=$PATH:$HOME/.local/bin:$HOME/bin
 	export PATH
 	

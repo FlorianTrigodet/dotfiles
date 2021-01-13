@@ -40,7 +40,6 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias penduick-anvio='ssh -L 8090:localhost:8090 penduick'
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
 	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
-	alias anvi-activate-master="conda activate anvio-master && source ~/virtual-envs/anvio-master/bin/activate"
 	anvi-activate-dev () {
 	    conda activate anvio-master && source ~/virtual-envs/anvio-master/bin/activate
 	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
@@ -57,7 +56,10 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	    conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
 	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 	}
-	alias oligotyping-activate-3.7="source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate"
+	oligotyping-activate-3.7 () {
+	    source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate
+	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: oligotyping 3.7 :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+	}
 	alias ml="cd /project2/meren && pwd"
 	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/INVERSIONS/ && pwd"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
@@ -88,6 +90,10 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	alias bioware='cd /usr/local/bioware/'
 	alias wd='cd /scratch/work/florian/mydata/corrosion/fixed_potential/metagenomes'
 	alias anvi-module='module load Anvio-master'
+	anvi-activate-dev () {
+	    conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
+	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] SSH://PENDUICK \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+	}
 	alias FastTree='FastTreeMP'
 fi
 #test
