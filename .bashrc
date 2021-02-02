@@ -139,7 +139,6 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	# Phyloflash db location
 	export PHYLOFLASH_DBHOME=/scratch/work/florian/mydata/corrosion/fixed_potential/metagenomes/SHORT_READ_BASED/rRNA/138.1
 
-
 	# custom tmp directory
 	export TMPDIR=/scratch/work/florian/tmp
 fi
