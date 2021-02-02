@@ -91,7 +91,8 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	alias bioware='cd /usr/local/bioware/'
 	alias wd='cd /scratch/work/florian/mydata/corrosion/fixed_potential/metagenomes'
 	anvi-activate-dev () {
-	    module load Anvio-master && anvi-activate-master
+	    module load Anvio-master 
+            cd /usr/local/bioware/github/anvio/ && git pull && cd - && conda activate /usr/local/bioware/conda-envs/anvio-master
 	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] SSH://PENDUICK \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 	}
 	alias FastTree='FastTreeMP'
