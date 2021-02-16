@@ -44,3 +44,9 @@ set cursorline
 
 let g:airline#extensions#tabline#enabled = 1
 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set backspace=indent,eol,start
