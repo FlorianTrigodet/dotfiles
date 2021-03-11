@@ -92,7 +92,8 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	# <<< conda initialize <<<
 
 	# make it pretty
-	export PS1="\[\e[0m\e[40m\e[1;30m\] :: base :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+	#export PS1="\[\e[0m\e[40m\e[1;30m\] :: base :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 
 	# source the anvio port
 	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
