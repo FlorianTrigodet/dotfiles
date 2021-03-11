@@ -62,7 +62,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: oligotyping 3.7 :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 	}
 	alias ml="cd /project2/meren && pwd"
-	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/INVERSIONS/ && pwd"
+	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/ && pwd"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
 	alias wdhmw="cd /project2/meren/PROJECTS/ORAL/HMW_METHOD_PAPER/SHORT_READS && pwd"
         alias midway="ssh midway2-login2.rcc.local"
