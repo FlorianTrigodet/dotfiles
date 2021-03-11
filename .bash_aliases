@@ -43,7 +43,7 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
 	anvi-activate-dev () {
 	    conda activate anvio-master && source ~/virtual-envs/anvio-master/bin/activate
-	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+        export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
 fi
 
@@ -93,7 +93,7 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	anvi-activate-dev () {
 	    module load Anvio-master 
             cd /usr/local/bioware/github/anvio/ && git pull && cd - && conda activate /usr/local/bioware/conda-envs/anvio-master
-	    export PS1="\[\e[0m\e[40m\e[1;30m\] :: anvi'o dev :: \[\e[0m\e[40m\e[1;41m\] SSH://PENDUICK \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+        export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
 	alias FastTree='FastTreeMP'
 fi
