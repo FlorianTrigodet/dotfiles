@@ -89,7 +89,7 @@ if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
 	alias scratch='cd /scratch/work/florian'
 	alias q='htop'
 	alias bioware='cd /usr/local/bioware/'
-	alias wd='cd /scratch/work/florian/mydata/corrosion/fixed_potential/metagenomes'
+	alias wd='cd /scratch/work/florian/mydata/corrosion/fixed_potential/PANGENOME_TENDERIA'
 	anvi-activate-dev () {
 	    module load Anvio-master 
             cd /usr/local/bioware/github/anvio/ && git pull && cd - && conda activate /usr/local/bioware/conda-envs/anvio-master
