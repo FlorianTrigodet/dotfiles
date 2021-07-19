@@ -68,7 +68,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         alias midway="ssh midway2-login2.rcc.local"
 
 	# easy way to remember to anvi-wokflow command
-	alias snake="echo 'anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \"clusterize -j={rule} -o={log} -n={threads} -x\" --jobs FIXME --resource nodes=FIXME --latency-wait 100'"
+	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100'"
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
 	alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ; \
