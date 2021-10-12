@@ -57,6 +57,10 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	    conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
+    anvi-activate-flo () {
+	    conda activate /project2/meren/trigodet/anvio-flo/
+        export CONDA_DEFAULT_ENV="anvi'o flo"
+	}
 	oligotyping-activate-3-7 () {
 	    source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate
         export CONDA_DEFAULT_ENV="oligotyping 3.7"
