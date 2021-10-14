@@ -67,6 +67,7 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
         export CONDA_DEFAULT_ENV="oligotyping 3.7"
 	}
 	alias ml="cd /project2/meren && pwd"
+	alias fl="cd /project2/meren/PEOPLE/trigodet && pwd"
 	alias wd="cd /project2/meren/PROJECTS/UC_POUCHITIS/ && pwd"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
 	alias wdhmw="cd /project2/meren/PROJECTS/ORAL/HMW_METHOD_PAPER/SHORT_READS && pwd"
