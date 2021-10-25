@@ -34,7 +34,7 @@ alias sedt="sed 's/\t/ | /g'"
 
 # specific to my macbook
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
-	alias wd="cd /Users/ftrigodet/Documents/PROJECT/HMW_METHOD_PAPER/REPRODUCIBLE_WORKFLOW" 
+	alias wd="cd /Users/ftrigodet/Documents/PROJECT/EBAME/LR_METAGENOMICS" 
 	alias p="cd /Users/ftrigodet/Documents/PROJECT/"
 	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
 	alias oligotyping-activate-3.7="source ~/virtual-envs/oligotyping-3.7/bin/activate"
