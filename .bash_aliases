@@ -27,6 +27,7 @@ alias eb="vim ~/.bashrc"
 alias ev="vim ~/.vimrc"
 alias sb="source ~/.bash_profile"
 alias sedt="sed 's/\t/ | /g'"
+alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 
 # -----------------------------------------------------------------------------
 # }}} MY MACBOOK {{{
