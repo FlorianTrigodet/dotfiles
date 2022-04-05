@@ -59,7 +59,11 @@ if [[ "$midway_server" =~ "$(uname -n)" ]]; then
 	    conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
-    anvi-activate-flo () {
+    anvi-activate-7.1 () {
+	    conda activate /project2/meren/PEOPLE/trigodet/VIRTUAL_ENV/anvio-7.1
+        export CONDA_DEFAULT_ENV="anvi'o 7.1"
+    }
+	anvi-activate-flo () {
 	    conda activate /project2/meren/PEOPLE/trigodet/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
