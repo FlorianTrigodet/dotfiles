@@ -37,6 +37,7 @@ alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias wd="cd /Users/ftrigodet/Documents/PROJECT/FMT/INVERSIONS" 
 	alias p="cd /Users/ftrigodet/Documents/PROJECT/"
+    alias xl='open -a "Microsoft Excel"'
 	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
 	alias oligotyping-activate-3.7="source ~/virtual-envs/oligotyping-3.7/bin/activate"
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
@@ -44,7 +45,7 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
 	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
 	anvi-activate-dev () {
-	    conda activate anvio-dev && source ~/virtual-envs/anvio-dev/bin/activate
+	    conda activate anvio-dev
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
 fi

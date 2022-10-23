@@ -1,5 +1,5 @@
 # find by typing `uname -n`
-export my_2019_macbook="MED42038.local:med42038.lan"
+export my_2019_macbook="MED42038.local:med42038.lan:10-19-13-188.ddhcp.uni-oldenburg.de:med42038.home"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
 
