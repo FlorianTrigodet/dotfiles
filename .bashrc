@@ -76,21 +76,6 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	# load modules
     module load Anaconda3/2022.05
 
-	# >>> conda initialize >>>
-	# !! Contents within this block are managed by 'conda init' !!
-	__conda_setup="$('/software/Anaconda3-5.3.0-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-	if [ $? -eq 0 ]; then
-	    eval "$__conda_setup"
-	else
-	    if [ -f "/software/Anaconda3-5.3.0-el7-x86_64/etc/profile.d/conda.sh" ]; then
-		. "/software/Anaconda3-5.3.0-el7-x86_64/etc/profile.d/conda.sh"
-	    else
-		export PATH="/software/Anaconda3-5.3.0-el7-x86_64/bin:$PATH"
-	    fi
-	fi
-	unset __conda_setup
-	# <<< conda initialize <<<
-
 	# make it pretty
     export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://CARL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 
