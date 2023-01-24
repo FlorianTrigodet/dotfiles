@@ -2,7 +2,7 @@
 export my_2019_macbook="vpn-172-26-1-137.awi.de:MED42038-2.local:MED42038.local:med42038.lan:10-19-13-188.ddhcp.uni-oldenburg.de:med42038.home:10-19-14-39.ddhcp.uni-oldenburg.de"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
-export carl_server="hpcl001"
+export carl_server="hpcl001;hpcl002;hpcl003"
 
 # -----------------------------------------------------------------------------
 # SHARED BY ALL {{{
@@ -92,20 +92,10 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	# <<< conda initialize <<<
 
 	# make it pretty
-    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://MIDWAY \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://CARL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 
 	# source the anvio port
-	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
-
-	# add some programs to the PATH variable
-	export PATH="$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/Flye/bin
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/minimap2
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/reads-for-assembly
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/vsearch-2.14.1-linux-x86_64/bin
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/sratoolkit.2.9.6-1-centos_linux64/bin
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/SPAdes-3.13.0-Linux/bin	
-	export PATH=$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/idba-1.1.3/bin
+	#source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 fi
 
 
