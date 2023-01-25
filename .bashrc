@@ -74,6 +74,7 @@ fi
 
 if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	# load modules
+    module load hpc-env/8.3
     module load Anaconda3/2022.05
 
 	# make it pretty
