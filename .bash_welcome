@@ -10,6 +10,10 @@ elif [[ "$midway_server" =~ "$(uname -n)" ]]; then
     echo ""
     echo "You're in midway 2. Welcome!"
     echo ""
+elif [[ "$carl_server" =~ "$(uname -n)" ]]; then
+    echo ""
+    echo "This is Carl speaking. Welcome!"
+    echo ""
 else
-    echo "You're here. Welcome!"
+    echo "I don't know this machine. Plz hlp"
 fi
