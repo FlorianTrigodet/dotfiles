@@ -57,7 +57,7 @@ fi
 # specific to carl
 if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	anvi-activate-dev () {
-	    conda activate ~/VIRTUAL_ENVIRONMENTS/anvio-dev/
+	    conda activate ~/VIRTUAL-ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
     anvi-activate-7.1 () {
