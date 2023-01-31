@@ -68,19 +68,14 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
-	oligotyping-activate-3-7 () {
-	    source /project2/meren/VIRTUAL-ENVS/oligotyping-python3.7/bin/activate
-        export CONDA_DEFAULT_ENV="oligotyping 3.7"
-	}
-	alias ml="echo toto  && pwd"
-	alias wd="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples/INVERSION/INVERSION_ANVIO && pwd"
+	alias ml="echo toto && pwd"
+	alias wd="echo toto && pwd"
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
-	alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ; \
-		squeue --partition=meren -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
+	alias q="squeue -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
 		squeue --partition=meren --user=$USER -O 'arrayjobid:13,name:35,stdout:120'"
 	alias qe="squeue --user=trigodet -o '%10i %30j %5u %8T %10M %9l %6D %R %5C %13m %15N'"
 	alias sc="scancel"
