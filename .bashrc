@@ -37,22 +37,20 @@ function named() {
 # -----------------------------------------------------------------------------
 
 if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
-	# added by Anaconda3 2019.10 installer
-	# >>> conda init >>>
-	# !! Contents within this block are managed by 'conda init' !!
-	__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/frigodet/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-	if [ $? -eq 0 ]; then
-	    \eval "$__conda_setup"
-	else
-	    if [ -f "/Users/frigodet/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-		. "/Users/frigodet/opt/anaconda3/etc/profile.d/conda.sh"
-		CONDA_CHANGEPS1=false conda activate base
-	    else
-		\export PATH="/Users/frigodet/opt/anaconda3/bin:$PATH"
-	    fi
-	fi
-	unset __conda_setup
-	# <<< conda init <<<
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/ftrigodet/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/ftrigodet/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/ftrigodet/opt/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/ftrigodet/opt/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 
 	# make it pretty
     export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
