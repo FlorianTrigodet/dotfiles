@@ -68,7 +68,7 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
-	alias ml="echo toto && pwd"
+	alias ml="cd /nfs/group/hifmbstorage/ && pwd"
 	alias wd="echo toto && pwd"
 
 	# easy way to remember to anvi-wokflow command
