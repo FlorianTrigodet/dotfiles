@@ -74,7 +74,6 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	# load modules
     module load hpc-env/6.4
     module load Anaconda3/2022.05
-    module load HTSlib
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
