@@ -61,7 +61,7 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
     anvi-activate-7.1 () {
-	    conda activate /project2/meren/PEOPLE/trigodet/VIRTUAL_ENV/anvio-7.1
+	    conda activate /nfs/group/hifmbstorage/VIRTUAL_ENVS/anvio-7.1
         export CONDA_DEFAULT_ENV="anvi'o 7.1"
     }
 	anvi-activate-flo () {

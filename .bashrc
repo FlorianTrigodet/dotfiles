@@ -97,7 +97,7 @@ if [[ "$carl_server" =~ "$(uname -n)" ]]; then
 	#source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 
     # add programs to the PATH variable
-    export PATH="$PATH:/nfs/group/hifmbstorage/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
+    export PATH="$PATH:/nfs/group/hifmbstorage/SOFTWARE/EXECUTABLES/"
 fi
 
 
