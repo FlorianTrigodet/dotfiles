@@ -28,15 +28,13 @@ alias ev="vim ~/.vimrc"
 alias sb="source ~/.bash_profile"
 alias sedt="sed 's/\t/ | /g'"
 alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
-alias dis_mine="my_2019_macbook=`uname -n`"
-alias dis_carl="carl_server=`uname -n`"
 
 # -----------------------------------------------------------------------------
 # }}} MY MACBOOK {{{
 # -----------------------------------------------------------------------------
 
 # specific to my macbook
-if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
+if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
 	alias wd="cd /Users/ftrigodet/Documents/PROJECT/FMT/INVERSIONS" 
 	alias p="cd /Users/ftrigodet/Documents/PROJECT/"
     alias xl='open -a "Microsoft Excel"'
@@ -57,7 +55,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # specific to carl
-if [[ "$carl_server" =~ "$(uname -n)" ]]; then
+if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	anvi-activate-dev () {
 	    conda activate /nfs/group/hifmbstorage/VIRTUAL_ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
@@ -90,7 +88,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # specific to midway
-if [[ "$midway_server" =~ "$(uname -n)" ]]; then
+if [[ "$midway_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "midway" ]]; then
 	anvi-activate-dev () {
 	    conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
@@ -132,7 +130,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # specific to penduick
-if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
+if [[ "$penduick_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
 	alias scratch='cd /scratch/work/florian'
 	alias q='htop'
 	alias bioware='cd /usr/local/bioware/'

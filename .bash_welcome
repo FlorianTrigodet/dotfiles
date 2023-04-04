@@ -1,16 +1,16 @@
-if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
+if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
     echo ""
     echo "wesh"
     echo ""
-elif [[ "$penduick_server" =~ "$(uname -n)" ]]; then
+elif [[ "$penduick_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "penduick" ]]; then
     echo ""
     echo "You're in penduick. Welcome!"
     echo ""
-elif [[ "$midway_server" =~ "$(uname -n)" ]]; then
+elif [[ "$midway_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "midway" ]]; then
     echo ""
     echo "You're in midway 2. Welcome!"
     echo ""
-elif [[ "$carl_server" =~ "$(uname -n)" ]]; then
+elif [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
     echo ""
     echo "This is Carl speaking. Welcome!"
     echo ""

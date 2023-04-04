@@ -1,8 +1,8 @@
 # find by typing `uname -n`
-export my_2019_macbook="${my_2019_macbook}10-19-3-198.ddhcp.uni-oldenburg.de:vpn-172-26-2-159.awi.de;vpn-172-26-1-137.awi.de:MED42038-2.local:MED42038.local:med42038.lan:10-19-13-188.ddhcp.uni-oldenburg.de:med42038.home:10-19-14-39.ddhcp.uni-oldenburg.de"
+export my_2019_macbook="10-19-3-198.ddhcp.uni-oldenburg.de:vpn-172-26-2-159.awi.de;vpn-172-26-1-137.awi.de:MED42038-2.local:MED42038.local:med42038.lan:10-19-13-188.ddhcp.uni-oldenburg.de:med42038.home:10-19-14-39.ddhcp.uni-oldenburg.de"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
-export carl_server="${carl_server};hpcl001;hpcl002;hpcl003"
+export carl_server="hpcl001;hpcl002;hpcl003"
 
 # -----------------------------------------------------------------------------
 # SHARED BY ALL {{{
@@ -14,7 +14,9 @@ if [ -z "$PS1" ]; then
 fi
 
 # welcome message
-bash ~/.bash_welcome
+if [ -f ~/.bash_welcome ]; then
+    source ~/.bash_welcome
+fi
 
 # Define your aliases here ...
 if [ -f ~/.bash_aliases ]; then
@@ -36,7 +38,7 @@ function named() {
 # }}} MY MACBOOK {{{
 # -----------------------------------------------------------------------------
 
-if [[ "$my_2019_macbook" =~ "$(uname -n)" ]]; then
+if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/Users/ftrigodet/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -70,7 +72,7 @@ fi
 # }}} CARL {{{
 # -----------------------------------------------------------------------------
 
-if [[ "$carl_server" =~ "$(uname -n)" ]]; then
+if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	# load modules
     module load hpc-env/6.4
     module load Anaconda3/2022.05
@@ -105,7 +107,7 @@ fi
 # }}} MIDWAY {{{
 # -----------------------------------------------------------------------------
 
-if [[ "$midway_server" =~ "$(uname -n)" ]]; then
+if [[ "$midway_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "midway" ]]; then
 	# load modules
 	module load vim/8.1
 	module load rstudio/1.2.1335
@@ -147,7 +149,7 @@ fi
 # }}} Penduick {{{
 # -----------------------------------------------------------------------------
 
-if [[ "$penduick_server" =~ "$(uname -n)" ]]; then
+if [[ "$penduick_server" =~ "$(uname -n)"  && -z "$1" ]] || [[ $1 == "penduick" ]]; then
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	__conda_setup="$('/usr/local/bioware/anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
