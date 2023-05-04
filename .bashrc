@@ -102,7 +102,7 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
     source /nfs/group/hifmbstorage/SOFTWARE/ANVIO_PORT/port_allocations.sh
 
     # add programs to the PATH variable
-    export PATH="$PATH:/nfs/group/hifmbstorage/SOFTWARE/EXECUTABLES/"
+    export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES/"
 fi
 
 

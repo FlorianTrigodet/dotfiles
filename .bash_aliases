@@ -57,11 +57,11 @@ fi
 # specific to carl
 if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	anvi-activate-dev () {
-	    conda activate /nfs/group/hifmbstorage/VIRTUAL_ENVS/anvio-dev/
+	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
     anvi-activate-7.1 () {
-	    conda activate /nfs/group/hifmbstorage/VIRTUAL_ENVS/anvio-7.1
+	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-7.1
         export CONDA_DEFAULT_ENV="anvi'o 7.1"
     }
 	anvi-activate-flo () {
@@ -71,7 +71,7 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	alias mlo="cd /nfs/group/hifmbstorage && pwd"
 	alias ml="cd /gss/work/nand5072 && pwd"
 	alias wd="echo toto && pwd"
-	alias gtdb="cd /nfs/group/hifmbstorage/RESOURCES/PUBLIC/GENOMES/GTDB && pwd"
+	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB && pwd"
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
