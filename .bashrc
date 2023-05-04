@@ -77,6 +77,9 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
     module load hpc-env/6.4
     module load Anaconda3/2022.05
 
+    # change default group writing permission
+    umask 0002
+
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/cm/shared/uniol/software/generic/Anaconda3/2022.05/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
