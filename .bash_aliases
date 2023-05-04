@@ -68,7 +68,8 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
-	alias ml="cd /nfs/group/hifmbstorage && pwd"
+	alias mlo="cd /nfs/group/hifmbstorage && pwd"
+	alias ml="cd /gss/work/nand5072 && pwd"
 	alias wd="echo toto && pwd"
 	alias gtdb="cd /nfs/group/hifmbstorage/RESOURCES/PUBLIC/GENOMES/GTDB && pwd"
 
