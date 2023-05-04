@@ -2,6 +2,6 @@ ssl_verify: true
 channels:
   - bioconda
   - r
-  - defaults
   - conda-forge
+  - defaults
 changeps1: false
