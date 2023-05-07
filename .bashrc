@@ -137,7 +137,7 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
     source /nfs/group/hifmbstorage/SOFTWARE/ANVIO_PORT/port_allocations.sh
 
     # add programs to the PATH variable
-    export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES:~/bim/sratoolkit.3.0.1-centos_linux64/bin"
+    export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES:~/bin/sratoolkit.3.0.1-centos_linux64/bin"
 fi
 
 
