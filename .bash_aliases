@@ -30,7 +30,27 @@ alias sedt="sed 's/\t/ | /g'"
 alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 
 # -----------------------------------------------------------------------------
-# }}} MY MACBOOK {{{
+# }}} MY MACBOOK 2023 {{{
+# -----------------------------------------------------------------------------
+
+# specific to my macbook
+if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
+	alias wd="cd /Users/fltrig002/Documents/PROJECT/FMT/INVERSIONS" 
+	alias p="cd /Users/fltrig002/Documents/PROJECT/"
+    alias xl='open -a "Microsoft Excel"'
+	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
+	alias penduick-anvio='ssh -L 8090:localhost:8090 penduick'
+	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
+	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
+    alias carl='ssh -L 8180:localhost:8180 carl | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
+	anvi-activate-dev () {
+	    conda activate anvio-dev
+        export CONDA_DEFAULT_ENV="anvi'o dev"
+	}
+fi
+
+# -----------------------------------------------------------------------------
+# }}} MY MACBOOK 2019 {{{
 # -----------------------------------------------------------------------------
 
 # specific to my macbook
