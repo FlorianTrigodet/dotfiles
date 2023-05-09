@@ -54,7 +54,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # specific to my macbook
-if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
+if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]]; then
 	alias wd="cd /Users/ftrigodet/Documents/PROJECT/FMT/INVERSIONS" 
 	alias p="cd /Users/ftrigodet/Documents/PROJECT/"
     alias xl='open -a "Microsoft Excel"'
@@ -152,7 +152,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # specific to penduick
-if [[ "$penduick_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
+if [[ "$penduick_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "penduick" ]]; then
 	alias scratch='cd /scratch/work/florian'
 	alias q='htop'
 	alias bioware='cd /usr/local/bioware/'
