@@ -73,7 +73,7 @@ fi
 # }}} MY MACBOOK 2019 {{{
 # -----------------------------------------------------------------------------
 
-if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
+if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]]; then
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/Users/ftrigodet/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
