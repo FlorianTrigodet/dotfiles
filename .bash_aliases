@@ -97,8 +97,8 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
-	alias q="squeue --user=$USER -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
-		squeue --user=$USER -O 'arrayjobid:13,name:35,stdout:120'"
+	alias q="squeue -A=patz5242 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
+		squeue -A=patz5242 -O 'arrayjobid:13,name:35,stdout:120'"
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
 fi
