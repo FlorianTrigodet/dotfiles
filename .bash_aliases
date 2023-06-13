@@ -92,7 +92,7 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	alias mlo="cd /nfs/group/hifmbstorage && pwd"
 	alias ml="cd /gss/work/nand5072 && pwd"
 	alias wd="echo toto && pwd"
-	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB && pwd"
+	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 
 	# easy way to remember to anvi-wokflow command
 	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
