@@ -36,7 +36,7 @@ alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 
 # specific to my macbook
 if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
-	alias wd="cd /Users/fltrig002/Documents/PROJECT/FMT/INVERSIONS" 
+	alias wd="cd /Users/fltrig002/Documents/PROJECT/FMT/INVERSIONS/ISOLATE_GENOMES-ALL-SAMPLES" 
 	alias p="cd /Users/fltrig002/Documents/PROJECT/"
     alias xl='open -a "Microsoft Excel"'
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
