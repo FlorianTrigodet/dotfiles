@@ -129,7 +129,7 @@ if [[ "$midway_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "midway" ]]; t
 	}
 	alias ml="cd /project2/meren && pwd"
 	alias fl="cd /project2/meren/PEOPLE/trigodet && pwd"
-	alias wd="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples/INVERSION/INVERSION_ANVIO && pwd"
+	alias wd="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples/INVERSION/INVERSION_ANVIO/ISOLATE_GENOMES-ALL-SAMPLES && ll"
 	alias wdfmt="cd /project2/meren/PROJECTS/FMT/2017-Louie-Samples && pwd"
 	alias wdhmw="cd /project2/meren/PROJECTS/ORAL/HMW_METHOD_PAPER/SHORT_READS && pwd"
         alias midway="ssh midway2-login2.rcc.local"
