@@ -6,6 +6,7 @@
 alias les='less -S'
 alias ll='ls -alh'
 alias lrt="ls -alhrt"
+alias lrs="ls -alhrS"
 alias yu="yadm add -u; yadm commit -m '$(date)'; yadm push origin master"
 alias ss="screen -S"
 alias sls="screen -ls"
