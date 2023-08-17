@@ -94,6 +94,7 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	alias mlo="cd /nfs/group/hifmbstorage && pwd"
 	alias ml="cd /gss/work/nand5072 && ll"
 	alias wd="cd /gss/work/nand5072/PROJECTS/PACBIO_DEEP_SEA_MGs_FROM_VIENNA_GROUP/metaMDBG_ASSEMBLY && ll"
+    alias a="cd /gss/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 
 	# easy way to remember to anvi-wokflow command
