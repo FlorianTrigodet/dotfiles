@@ -98,7 +98,7 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 
 	# easy way to remember to anvi-wokflow command
-	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
+	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --cores FIXME --resource nodes=FIXME --latency-wait 100\"'"
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
 	alias q="squeue --user=patz5242,bube0466,tule8538 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
