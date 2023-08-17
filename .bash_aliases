@@ -39,6 +39,7 @@ alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
 	alias wd="cd /Users/fltrig002/Documents/PROJECT/FMT/INVERSIONS/ISOLATE_GENOMES-ALL-SAMPLES && ll" 
 	alias p="cd /Users/fltrig002/Documents/PROJECT/"
+    alias a="cd /Users/fltrig002/github/anvio/anvio/ && ll"
     alias xl='open -a "Microsoft Excel"'
 	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
 	alias penduick-anvio='ssh -L 8090:localhost:8090 penduick'
