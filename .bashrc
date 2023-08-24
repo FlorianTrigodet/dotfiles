@@ -104,6 +104,15 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]
 fi
 
 # -----------------------------------------------------------------------------
+# }}} ROSA {{{
+# -----------------------------------------------------------------------------
+
+if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
+	# make it pretty
+    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+fi
+
+# -----------------------------------------------------------------------------
 # }}} CARL {{{
 # -----------------------------------------------------------------------------
 
@@ -113,7 +122,6 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
     module load Anaconda3/2022.05
 
     # change default group writing permission
-    umask 0002
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
