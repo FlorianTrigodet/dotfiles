@@ -4,6 +4,7 @@ export my_2023_macbook="ohif01m027.w2kroot.uni-oldenburg.de:ohif01m027:ohif01m02
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
 export carl_server="hpcl001;hpcl002;hpcl003"
+export rosa_server=""
 
 # -----------------------------------------------------------------------------
 # SHARED BY ALL {{{
@@ -108,6 +109,12 @@ fi
 # -----------------------------------------------------------------------------
 
 if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
+    # load modules
+    module load Miniconda3
+
+    # add path
+    export PATH="$HOME/bin:$PATH"
+
 	# make it pretty
     export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 fi
