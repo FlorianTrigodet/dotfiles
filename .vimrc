@@ -4,28 +4,28 @@
 "
 " install plugins:
 " cd ~/.vim/bundle
-" git clone https://github.com/vim-scripts/syntastic.git
 " git clone https://github.com/morhetz/gruvbox.git
 " git clone https://github.com/vim-airline/vim-airline
 " git clone https://github.com/vim-airline/vim-airline-themes
 " git clone https://github.com/godlygeek/tabular.git
 " git clone https://github.com/tpope/vim-fugitive
 " git clone https://github.com/jamshedvesuna/vim-markdown-preview
+" git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
 set nocompatible
 
 " ennable the use of mouse
-set mouse=v
+set mouse=a
 
 " add line number
 set number
 
 " coloration
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 " unable auto comment (when paste)
-set paste
+" set paste
 
 
 execute pathogen#infect()
@@ -53,18 +53,13 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set backspace=indent,eol,start
-
-" syntastic default configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+set list
 
 " markdown preview
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
+
+" jedi stuff
+let g:jedi#show_call_signatures = 0

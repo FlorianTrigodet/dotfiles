@@ -65,6 +65,11 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
 	export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
 
+  # ruby in the path
+  export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+  # and you'll need that
+  export LC_CTYPE="utf-8"
+
 	# remove zsh warning
 	export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
