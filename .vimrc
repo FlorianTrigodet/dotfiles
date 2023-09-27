@@ -18,7 +18,7 @@ set nocompatible
 set mouse=a
 
 " add line number
-set number
+set number relativenumber
 
 " coloration
 filetype plugin indent on
