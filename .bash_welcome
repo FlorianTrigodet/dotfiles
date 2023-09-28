@@ -14,9 +14,9 @@ elif [[ "$midway_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "midway" ]];
     echo ""
     echo "You're in midway 2. Welcome!"
     echo ""
-elif [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
+elif [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     echo ""
-    echo "This is Carl speaking. Welcome!"
+    echo "This is Rosa speaking. Welcome!"
     echo ""
 else
     echo "I don't know this machine. Plz hlp"
