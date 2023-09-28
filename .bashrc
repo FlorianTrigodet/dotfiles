@@ -118,48 +118,14 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # load modules
     module load Miniconda3
 
-    # add path
-    export PATH="$HOME/bin:$PATH"
+    # go to the working directory
+    cd /gss/work/nand5072/ && ll
+
+    # add programs to the PATH variable
+    export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES:$HOME/bin"
 
 	# make it pretty
     export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-fi
-
-# -----------------------------------------------------------------------------
-# }}} CARL {{{
-# -----------------------------------------------------------------------------
-
-if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
-	# load modules
-    module load hpc-env/6.4
-    module load Anaconda3/2022.05
-    
-    # go to the working directory
-    cd /gss/work/nand5072/ && ll
-    
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/cm/shared/uniol/software/generic/Anaconda3/2022.05/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/cm/shared/uniol/software/generic/Anaconda3/2022.05/etc/profile.d/conda.sh" ]; then
-            . "/cm/shared/uniol/software/generic/Anaconda3/2022.05/etc/profile.d/conda.sh"
-        else
-            export PATH="/cm/shared/uniol/software/generic/Anaconda3/2022.05/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-
-	# make it pretty
-    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://CARL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-
-	# source the anvio port
-    source /nfs/group/hifmbstorage/SOFTWARE/ANVIO_PORT/port_allocations.sh
-
-    # add programs to the PATH variable
-    export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES:/user/patz5242/bin/sratoolkit.3.0.1-centos_linux64/bin"
 fi
 
 
