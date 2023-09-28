@@ -75,11 +75,11 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]
 	}
 fi
 # -----------------------------------------------------------------------------
-# }}} CARL {{{
+# }}} ROSA {{{
 # -----------------------------------------------------------------------------
 
 # specific to carl
-if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
+if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	anvi-activate-dev () {
 	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
@@ -92,20 +92,20 @@ if [[ "$carl_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "carl" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
-	alias mlo="cd /nfs/group/hifmbstorage && pwd"
 	alias ml="cd /gss/work/nand5072 && ll"
 	alias wd="cd /gss/work/nand5072/PROJECTS/PACBIO_DEEP_SEA_MGs_FROM_VIENNA_GROUP/metaMDBG_ASSEMBLY && ll"
-    alias a="cd /gss/work/nand5072/SOFTWARE/anvio/anvio/ && ll"
+  alias a="cd /gss/work/nand5072/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 
-	# easy way to remember to anvi-wokflow command
-	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
 	alias q="squeue --user=patz5242,bube0466,tule8538 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
 		squeue --user=patz5242,bube0466,tule8538 -O 'arrayjobid:13,name:35,stdout:120'"
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
+	
+  # easy way to remember to anvi-wokflow command
+	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
 fi
 
 
