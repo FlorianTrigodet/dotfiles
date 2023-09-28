@@ -3,8 +3,7 @@ export my_2019_macbook="10-19-3-198.ddhcp.uni-oldenburg.de:vpn-172-26-2-159.awi.
 export my_2023_macbook="ohif01m027.w2kroot.uni-oldenburg.de:ohif01m027:ohif01m027.local:10-19-7-214.ddhcp.uni-oldenburg.de:10-19-6-209.ddhcp.uni-oldenburg.de"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
-export carl_server="hpcl001;hpcl002;hpcl003"
-export rosa_server=""
+export rosa_server="hpcl001;hpcl002;hpcl003"
 
 # -----------------------------------------------------------------------------
 # SHARED BY ALL {{{
