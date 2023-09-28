@@ -121,8 +121,25 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # go to the working directory
     cd /gss/work/nand5072/ && ll
 
+    # change default group writing permission
+    umask 0002
+
     # add programs to the PATH variable
     export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES:$HOME/bin"
+
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/etc/profile.d/conda.sh" ]; then
+            . "/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/etc/profile.d/conda.sh"
+        else
+            export PATH="/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 
 	# make it pretty
     export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
