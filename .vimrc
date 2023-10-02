@@ -14,11 +14,14 @@
 
 set nocompatible
 
-" ennable the use of mouse
+" enable the use of mouse
 set mouse=a
 
 " add line number
 set number relativenumber
+
+" spelling
+set spell
 
 " coloration
 filetype plugin indent on
@@ -32,6 +35,7 @@ execute pathogen#infect()
 set term=xterm-256color
 set background=dark
 " colorscheme mustang
+let g:gruvbox_guisp_fallback = "bg"
 colorscheme gruvbox
 
 
