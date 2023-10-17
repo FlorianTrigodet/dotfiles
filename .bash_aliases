@@ -51,6 +51,10 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 	    conda activate anvio-dev
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
+	anvi-activate-8 () {
+	    conda activate anvio-8
+        export CONDA_DEFAULT_ENV="anvi'o v8"
+	}
 fi
 
 # -----------------------------------------------------------------------------
