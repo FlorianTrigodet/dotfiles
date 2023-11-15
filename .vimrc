@@ -21,7 +21,10 @@ set mouse=a
 set number relativenumber
 
 " spelling
-set spell
+set nospell
+
+" no wrap
+set nowrap
 
 " coloration
 filetype plugin indent on
