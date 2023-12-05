@@ -70,5 +70,3 @@ let vim_markdown_preview_hotkey='<C-m>'
 
 " jedi stuff
 let g:jedi#show_call_signatures = 0
-
-inoreabbrev toto totoi
