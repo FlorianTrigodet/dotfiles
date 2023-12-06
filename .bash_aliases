@@ -103,7 +103,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
-	alias q="squeue --user=patz5242,bube0466,tule8538 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
+	alias q="squeue --user=patz5242,bube0466,tule8538,elgo4396 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
 		squeue --user=patz5242,bube0466,tule8538 -O 'arrayjobid:13,name:35,stdout:120'"
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
