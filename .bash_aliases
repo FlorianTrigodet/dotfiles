@@ -88,9 +88,9 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
-    anvi-activate-7.1 () {
-	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-7.1
-        export CONDA_DEFAULT_ENV="anvi'o 7.1"
+    anvi-activate-8 () {
+	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-8
+        export CONDA_DEFAULT_ENV="anvi'o 8"
     }
 	anvi-activate-flo () {
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
