@@ -30,7 +30,7 @@ alias ev="vim ~/.vimrc"
 alias sb="source ~/.bash_profile"
 alias sedt="sed 's/\t/ | /g'"
 alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
-alias poule="git pull"
+alias poule="echo -e 'tltlaskdfjas;ldfj'als;kdjf\"'"
 
 # -----------------------------------------------------------------------------
 # }}} MY MACBOOK 2023 {{{
