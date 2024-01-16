@@ -30,7 +30,28 @@ alias ev="vim ~/.vimrc"
 alias sb="source ~/.bash_profile"
 alias sedt="sed 's/\t/ | /g'"
 alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
-alias poule="echo -e 'tltlaskdfjas;ldfj'als;kdjf\"'"
+poule () {
+    echo "
+                   ,~.
+                ,-'__ \`-,
+               {,-'  \`. }              ,')
+     git      ,( a )   \`-.__         ,',')~,
+    poule!   <=.) (         \`-.__,==' ' ' '}
+               (   )                      /
+                \`-'\\   ,                  )
+                    |  \\        \`~.      /
+                    \\   \`._        \\    /
+                     \\     \`._____,'   /
+                      \`-.            ,'
+                         \`-.      ,-'
+                            \`~~~~'
+                            //_||
+                         __//--'/\`
+                       ,--'/\`  '
+                          '
+"
+    git pull
+}
 
 # -----------------------------------------------------------------------------
 # }}} MY MACBOOK 2023 {{{
@@ -174,4 +195,3 @@ if [[ "$penduick_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "penduick" ]
 	}
 	alias FastTree='FastTreeMP'
 fi
-#test
