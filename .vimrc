@@ -28,6 +28,10 @@ set nowrap
 
 " coloration
 filetype plugin indent on
+set hlsearch
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 syntax on
 
 " unable auto comment (when paste)
@@ -70,3 +74,4 @@ let vim_markdown_preview_hotkey='<C-m>'
 
 " jedi stuff
 let g:jedi#show_call_signatures = 0
+
