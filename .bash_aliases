@@ -64,7 +64,7 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 	alias p="cd /Users/fltrig002/Documents/PROJECT/"
     alias a="cd /Users/fltrig002/github/anvio/anvio/ && ll"
     alias xl='open -a "Microsoft Excel"'
-	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
+	alias penduick='ssh penduick-by-gaiola -Y'
 	alias penduick-anvio='ssh -L 8090:localhost:8090 penduick'
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
 	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
@@ -91,7 +91,7 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]
     alias xl='open -a "Microsoft Excel"'
 	alias oligotyping-activate-2.7="source ~/virtual-envs/oligotyping-2.7/bin/activate"
 	alias oligotyping-activate-3.7="source ~/virtual-envs/oligotyping-3.7/bin/activate"
-	alias penduick='ssh trigodet@penduick.univ-brest.fr -Y'
+	alias penduick='ssh penduick-by-gaiola'
 	alias penduick-anvio='ssh -L 8090:localhost:8090 penduick'
 	alias penduick-extra_net='ssh trigodet@stockage.univ-brest.fr'
 	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
