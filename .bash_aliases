@@ -127,11 +127,11 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
 	alias q="sinfo --partition=mpcs_hifmb.p -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ;
-    squeue --user=patz5242,bube0466,tule8538,elgo4396 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
-		squeue --user=patz5242,bube0466,tule8538,elgo4396 -O 'arrayjobid:13,name:35,stdout:120'"
+    squeue -A agecodatasci -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
+		squeue -A agecodatasci -O 'arrayjobid:13,name:35,stdout:120'" \
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
-	
+
   # easy way to remember to anvi-wokflow command
 	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
 fi
