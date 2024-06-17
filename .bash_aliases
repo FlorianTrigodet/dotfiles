@@ -119,10 +119,10 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
-	alias ml="cd /gss/work/nand5072 && ll"
-	alias wd="cd /gss/work/nand5072/PROJECTS/PACBIO_DEEP_SEA_MGs_FROM_VIENNA_GROUP/metaMDBG_ASSEMBLY && ll"
-  alias a="cd /gss/work/nand5072/SOFTWARE/anvio/anvio/ && ll"
-	alias gtdb="cd /gss/work/nand5072/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
+	alias ml="cd $GROUPDSS && ll"
+	alias wd="cd $GROUPDSS/PROJECTS/PACBIO_DEEP_SEA_MGs_FROM_VIENNA_GROUP/metaMDBG_ASSEMBLY && ll"
+  alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
+	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
@@ -136,7 +136,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
 
   # easy way to remember to anvi-wokflow command
-	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\"'"
+	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\" '"
 fi
 
 
