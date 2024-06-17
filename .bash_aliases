@@ -108,11 +108,11 @@ fi
 # specific to carl
 if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	anvi-activate-dev () {
-	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-dev/
+	    conda activate $GROUPDSS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
     anvi-activate-8 () {
-	    conda activate /gss/work/nand5072/VIRTUAL_ENVS/anvio-8
+	    conda activate $GROUPDSS/VIRTUAL_ENVS/anvio-8
         export CONDA_DEFAULT_ENV="anvi'o 8"
     }
 	anvi-activate-flo () {
