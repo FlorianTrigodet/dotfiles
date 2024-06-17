@@ -6,4 +6,4 @@ channels:
   - defaults
 changeps1: false
 envs_dirs:
-  - /gss/work/nand5072/VIRTUAL_ENVS
+  - $GROUPDSS/VIRTUAL_ENVS

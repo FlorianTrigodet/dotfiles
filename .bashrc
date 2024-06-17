@@ -120,13 +120,13 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     module load Miniconda3
 
     # go to the working directory
-    cd /gss/work/nand5072/ && ll
+    cd $GROUPDSS && ll
 
     # change default group writing permission
     umask 0002
 
     # add programs to the PATH variable
-    export PATH="$PATH:/gss/work/nand5072/SOFTWARE/EXECUTABLES:$HOME/bin"
+    export PATH="$PATH:$GROUPDSS/SOFTWARE/EXECUTABLES:$HOME/bin"
 
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
