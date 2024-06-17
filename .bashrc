@@ -117,7 +117,8 @@ fi
 if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # load modules
     module load hpc-env/13.1
-    module load Miniconda3
+    #module load Miniconda3
+    module load Mamba
 
     # go to the working directory
     cd $GROUPDSS && ll
