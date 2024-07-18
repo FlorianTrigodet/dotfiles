@@ -127,7 +127,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     umask 0002
 
     # add programs to the PATH variable
-    export PATH="$PATH:$GROUPDSS/SOFTWARE/EXECUTABLES:$HOME/bin"
+    export PATH="$PATH:$GROUPDSS/SOFTWARE/EXECUTABLES:$HOME/bin:$HOME/.local/bin"
 
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
