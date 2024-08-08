@@ -8,7 +8,7 @@ syn match T "T"
 syn match C "C"
 syn match G "G"
 
-hi A ctermbg=23 ctermfg=White term=bold 
-hi T ctermbg=88 ctermfg=White term=bold
-hi C ctermbg=215 ctermfg=White term=bold
-hi G ctermbg=230 ctermfg=239 term=bold
+hi A ctermfg=36  term=bold
+hi T ctermfg=125  term=bold
+hi C ctermfg=215 term=bold
+hi G ctermfg=230 term=bold
