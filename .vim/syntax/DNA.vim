@@ -3,7 +3,7 @@
 "
 " :set syntax=DNA
 
-# remove max num of character that can be highlighted
+" remove max num of character that can be highlighted
 set synmaxcol=0
 
 syn match A "A"
