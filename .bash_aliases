@@ -120,7 +120,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
 	alias ml="cd $GROUPDSS && ll"
-	alias wd="cd /fs/dss/groups/agecodatasci/PROJECTS/HAWAII-DIEL-SAMPLING/LONG_READ_METAGENOMICS/03_ASSEMBLY_COMPARISON  && ll"
+	alias wd="cd /fs/dss/groups/agecodatasci/PROJECTS/LONG_READ_ASSEMBLY_ERRORS  && ll"
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 
