@@ -122,7 +122,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias wd="cd /fs/dss/groups/agecodatasci/PROJECTS/LONG_READ_ASSEMBLY_ERRORS  && ll"
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
-	alias globdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GlobDB/r220 && pwd"
+	alias globdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GlobDB/r220 && ll"
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
