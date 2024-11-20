@@ -60,7 +60,7 @@ poule () {
 
 # specific to my macbook
 if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; then
-	alias wd="cd ~/Documents/PROJECT/HAWAII-DIEL-SAMPLING/LONG_READ_METAGENOMICS/03_ASSEMBLY_COMPARISON && ll" 
+	alias wd="cd /Users/fltrig002/Documents/PROJECT/LONG_READ_ASSEMBLY_ERRORS && ll" 
 	alias p="cd /Users/fltrig002/Documents/PROJECT/"
     alias a="cd /Users/fltrig002/github/anvio/anvio/ && ll"
     alias xl='open -a "Microsoft Excel"'
