@@ -122,6 +122,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias wd="cd /fs/dss/groups/agecodatasci/PROJECTS/LONG_READ_ASSEMBLY_ERRORS  && ll"
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
+	alias globdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GlobDB/r220 && pwd"
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
@@ -131,6 +132,8 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias qg="sinfo --partition=mpcs_hifmb.p,mpcp_hifmb.p -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ;
     squeue -A agecodatasci -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
 		squeue -A agecodatasci -O 'arrayjobid:13,name:35,stdout:120'"
+	alias qgg="sinfo --partition=mpcs_hifmb.p,mpcp_hifmb.p -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ;
+    squeue -A agmarinecons,agecodatasci -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'"
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
 
