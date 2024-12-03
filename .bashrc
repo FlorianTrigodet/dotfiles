@@ -53,13 +53,13 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
     fi
     unset __conda_setup
     # <<< conda initialize <<<
-    
-    # brew stuff    
+
+    # brew stuff
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
 	# make it pretty
     export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-	
+
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
 	export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
@@ -96,8 +96,8 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]
     # <<< conda initialize <<<
 
 	# make it pretty
-    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-	
+	export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
 	export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$HOME/bin:$PATH"
