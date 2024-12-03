@@ -130,14 +130,14 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     export PATH="$PATH:$GROUPDSS/SOFTWARE/EXECUTABLES:$HOME/bin:$HOME/.local/bin"
 
     # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/etc/profile.d/conda.sh" ]; then
-            . "/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/etc/profile.d/conda.sh"
+        if [ -f "/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/etc/profile.d/conda.sh" ]; then
+            . "/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/etc/profile.d/conda.sh"
         else
-            export PATH="/cm/shared/uniol/sw/SYSTEM/Miniconda3/23.5.2-0/bin:$PATH"
+            export PATH="/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/bin:$PATH"
         fi
     fi
     unset __conda_setup
