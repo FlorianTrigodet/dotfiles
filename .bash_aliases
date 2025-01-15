@@ -135,7 +135,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias qgg="sinfo --partition=mpcs_hifmb.p,mpcp_hifmb.p -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ;
     squeue -A agmarinecons,agecodatasci -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'"
 	alias sc="scancel"
-	alias si="sinteractive --partition=meren --time=08:00:00 --mem=15G --exclude midway-l16b-28"
+	alias si="srun --pty -p mpcs_hifmb.p --ntasks-per-node=1 --nodes=1 bash"
 
   # easy way to remember to anvi-wokflow command
 	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -n={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\" '"
