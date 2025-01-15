@@ -123,6 +123,9 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # go to the working directory
     cd $GROUPDSS && ll
 
+    # add port number
+    ANVIO_PORT=8180
+
     # change default group writing permission
     umask 0002
 
