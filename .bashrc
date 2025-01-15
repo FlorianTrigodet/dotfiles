@@ -132,6 +132,9 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # add programs to the PATH variable
     export PATH="$PATH:$GROUPDSS/SOFTWARE/EXECUTABLES:$HOME/bin:$HOME/.local/bin"
 
+    # get your anvio port number
+    source /fs/dss/groups/agecodatasci/SOFTWARE/SHARED/port_allocation
+
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
