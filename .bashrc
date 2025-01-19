@@ -58,7 +58,8 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
 	# make it pretty
-    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+    # export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+    source ~/.bash_ps1/themes/teal_cyber
 
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
@@ -97,6 +98,8 @@ if [[ "$my_2019_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine_old" ]
 
 	# make it pretty
 	export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+
+
 
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
@@ -147,31 +150,8 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # <<< conda initialize <<<
 
 	# make it pretty according to the login node vs compute node for interactive session
-    if [[ "$(uname -n)" =~ "hpcl" ]]; then
-        export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m \033[48;5;196m\033[1m\033[38;5;255mR\033[0m
-\033[48;5;202m\033[1m\033[38;5;255mO\033[0m
-\033[48;5;208m\033[1m\033[38;5;255mS\033[0m
-\033[48;5;214m\033[1m\033[38;5;255mA\033[0m
-\033[48;5;220m\033[1m\033[38;5;255m:\033[0m
-\033[48;5;226m\033[1m\033[38;5;255m \033[0m
-\033[48;5;154m\033[1m\033[38;5;255mL\033[0m
-\033[48;5;49m\033[1m\033[38;5;255mO\033[0m
-\033[48;5;30m\033[1m\033[38;5;255mG\033[0m
-\033[48;5;33m\033[1m\033[38;5;255mI\033[0m
-\033[48;5;37m\033[1m\033[38;5;255mN\033[0m
-\033[48;5;39m\033[1m\033[38;5;255m \033[0m
-\033[48;5;45m\033[1m\033[38;5;255mN\033[0m
-\033[48;5;49m\033[1m\033[38;5;255mO\033[0m
-\033[48;5;53m\033[1m\033[38;5;255mD\033[0m
-\033[48;5;57m\033[1m\033[38;5;255mE\033[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-        #export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[38;5;216;48;5;31;1;5m\] Login Node \[\e[0m\] \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-    elif [[ "$(uname -n)" =~ "mpcs" ]]; then
-        export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-    else
-        export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-    fi
+    export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
 fi
-
 
 # -----------------------------------------------------------------------------
 # }}} MIDWAY {{{
