@@ -1,6 +1,6 @@
 # find by typing `uname -n`
 export my_2019_macbook="10-19-3-198.ddhcp.uni-oldenburg.de:vpn-172-26-2-159.awi.de;vpn-172-26-1-137.awi.de:MED42038-2.local:MED42038.local:med42038.lan:10-19-13-188.ddhcp.uni-oldenburg.de:med42038.home:10-19-14-39.ddhcp.uni-oldenburg.de"
-export my_2023_macbook="ohif01m027.home:10-17-3-15.ddhcp.uni-oldenburg.de:ohif01m027.w2kroot.uni-oldenburg.de:ohif01m027:ohif01m027.local:10-19-7-214.ddhcp.uni-oldenburg.de:10-19-6-209.ddhcp.uni-oldenburg.de"
+export my_2023_macbook="Mac;ohif01m027.home:10-17-3-15.ddhcp.uni-oldenburg.de:ohif01m027.w2kroot.uni-oldenburg.de:ohif01m027:ohif01m027.local:10-19-7-214.ddhcp.uni-oldenburg.de:10-19-6-209.ddhcp.uni-oldenburg.de"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
 export rosa_server="hpcl001;hpcl002;hpcl003;mpcs043;mpcs044;mpcs045;mpcs046;mpcs047;mpcs048;mpcs049;mpcs050;mpcs051;mpcs052;mpcs053;mpcs054;mpcs055;mpcs056"
@@ -148,7 +148,23 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 
 	# make it pretty according to the login node vs compute node for interactive session
     if [[ "$(uname -n)" =~ "hpcl" ]]; then
-        export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[38;5;216;48;5;31;1;5m\] Login Node \[\e[0m\] \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+        export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m \033[48;5;196m\033[1m\033[38;5;255mR\033[0m
+\033[48;5;202m\033[1m\033[38;5;255mO\033[0m
+\033[48;5;208m\033[1m\033[38;5;255mS\033[0m
+\033[48;5;214m\033[1m\033[38;5;255mA\033[0m
+\033[48;5;220m\033[1m\033[38;5;255m:\033[0m
+\033[48;5;226m\033[1m\033[38;5;255m \033[0m
+\033[48;5;154m\033[1m\033[38;5;255mL\033[0m
+\033[48;5;49m\033[1m\033[38;5;255mO\033[0m
+\033[48;5;30m\033[1m\033[38;5;255mG\033[0m
+\033[48;5;33m\033[1m\033[38;5;255mI\033[0m
+\033[48;5;37m\033[1m\033[38;5;255mN\033[0m
+\033[48;5;39m\033[1m\033[38;5;255m \033[0m
+\033[48;5;45m\033[1m\033[38;5;255mN\033[0m
+\033[48;5;49m\033[1m\033[38;5;255mO\033[0m
+\033[48;5;53m\033[1m\033[38;5;255mD\033[0m
+\033[48;5;57m\033[1m\033[38;5;255mE\033[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
+        #export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[38;5;216;48;5;31;1;5m\] Login Node \[\e[0m\] \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
     elif [[ "$(uname -n)" =~ "mpcs" ]]; then
         export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
     else
