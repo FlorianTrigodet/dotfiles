@@ -2,11 +2,20 @@
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 source $scriptDir'/../lib/lib'
 
+#
+col_conda='2E5077'
+col_machine='4DA1A9'
+col_pwd='79D7BE'
+
+col_conda='EFB036'
+col_machine='3B6790'
+col_pwd='23486A'
+
 prompt_cmd() {
   TMP_GIT_BRANCH="$(gitbranch)"
   CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
-  LINE_1="$(rgb_fg_ps1 "2E5077")╭──$(rgb_fg_bg_ps1 $palette_text "2E5077") ::$CONDA_ENV:: $(no_color_ps1)$(rgb_fg_ps1 "2E5077")$(rgb_fg_bg_ps1 "000000" "4DA1A9") $ENV $(no_color_ps1)$(rgb_fg_ps1 "4DA1A9")$(rgb_fg_bg_ps1 "000000" "79D7BE") $PWD $(no_color_ps1)$(rgb_fg_ps1 "79D7BE")"
-  LINE_3="$(rgb_fg_ps1 "2E5077")╰─$(rgb_fg_ps1 $palette_accent) >>> $(rgb_fg_ps1 $palette_text)"
+  LINE_1="$(rgb_fg_ps1 $col_conda)╭──$(rgb_fg_bg_ps1 '694602' $col_conda) ::$CONDA_ENV:: $(no_color_ps1)$(rgb_fg_ps1 $col_conda)$(rgb_fg_bg_ps1 "000000" $col_machine)$(rgb_fg_bg_ps1 "ffffff" $col_machine) ☕ $ENV $(no_color_ps1)$(rgb_fg_ps1 $col_machine)$(rgb_fg_bg_ps1 "000000" $col_pwd)$(rgb_fg_bg_ps1 "cccccc" $col_pwd) $PWD $(no_color_ps1)$(rgb_fg_ps1 $col_pwd)"
+  LINE_3="$(rgb_fg_ps1 $col_conda)╰─$(rgb_fg_ps1 $palette_accent) >>> $(rgb_fg_ps1 $palette_text)"
 
   PS1="\r\n${LINE_1}\r\n${LINE_3}"
 }
