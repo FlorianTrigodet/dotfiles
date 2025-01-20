@@ -3,18 +3,17 @@
 
 # turns the #123b84 color codes to 203;133;54 rgb codes
 hex_color_to_rgb() {
-  hex=${1#"#"}
-
-  r=$((0x${hex:0:2}))
-  g=$((0x${hex:2:2}))
-  b=$((0x${hex:4:2}))
+    hex=${1#"#"}
+    r=$((0x${hex:0:2}))
+    g=$((0x${hex:2:2}))
+    b=$((0x${hex:4:2}))
 
   printf "%d;%d;%d\n" "$r" "$g" "$b"
 }
 
 col_1="EFB036,694602"
-col_2='3B6790,00000'
-col_3='23486A,cccccc'
+col_2="3B6790,00000"
+col_3="23486A,cccccc"
 
 rgb_ps1() {
     main=${1%,*}
@@ -37,12 +36,19 @@ rgb_ps1() {
 
 
 prompt_cmd() {
-  #TMP_GIT_BRANCH="$(gitbranch)"
-  CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
-  LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'a') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $PWD $(rgb_ps1 $col_3 'f')"
-  LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
+    GIT_BRANCH="$(git branch --show-current 2>/dev/null)"
+    CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
 
-  PS1="\r\n${LINE_1}\r\n${LINE_2}"
+    # if in a screen, no color for you
+    if [ -n "$STY" ]; then
+        LINE_1="╭── ::$CONDA_ENV:: | $ENV | $PWD"
+        LINE_2="╰─ >>> "
+        PS1="\r\n${LINE_1}\r\n${LINE_2}"
+    else  # else, plently of colors!
+        LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'a') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $PWD $(rgb_ps1 $col_3 'f')"
+        LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
+        PS1="\r\n${LINE_1}\r\n${LINE_2}"
+    fi
 }
 
 export PROMPT_COMMAND='prompt_cmd'
