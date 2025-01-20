@@ -59,7 +59,7 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 
 	# make it pretty
     # export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-    ENV='LOCAL'; source ~/.bash_ps1/themes/teal_default
+    ENV='☕ LOCAL'; source ~/.bash_ps1/themes/teal_default
 
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
@@ -151,7 +151,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 
 	# make it pretty according to the login node vs compute node for interactive session
     #export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] SSH://ROSA \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
-    ENV='SSH://ROSA'; source ~/.bash_ps1/themes/teal_default
+    ENV='🖥️ SSH://ROSA'; source ~/.bash_ps1/themes/teal_default
 fi
 
 # -----------------------------------------------------------------------------

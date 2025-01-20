@@ -14,38 +14,10 @@ col_pwd='23486A'
 prompt_cmd() {
   TMP_GIT_BRANCH="$(gitbranch)"
   CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
-  LINE_1="$(rgb_fg_ps1 $col_conda)╭──$(rgb_fg_bg_ps1 '694602' $col_conda) ::$CONDA_ENV:: $(no_color_ps1)$(rgb_fg_ps1 $col_conda)$(rgb_fg_bg_ps1 "000000" $col_machine)$(rgb_fg_bg_ps1 "ffffff" $col_machine) ☕ $ENV $(no_color_ps1)$(rgb_fg_ps1 $col_machine)$(rgb_fg_bg_ps1 "000000" $col_pwd)$(rgb_fg_bg_ps1 "cccccc" $col_pwd) $PWD $(no_color_ps1)$(rgb_fg_ps1 $col_pwd)"
+  LINE_1="$(rgb_fg_ps1 $col_conda)╭──$(rgb_fg_bg_ps1 '694602' $col_conda) ::$CONDA_ENV:: $(no_color_ps1)$(rgb_fg_ps1 $col_conda)$(rgb_fg_bg_ps1 "000000" $col_machine)$(rgb_fg_bg_ps1 "ffffff" $col_machine) $ENV $(no_color_ps1)$(rgb_fg_ps1 $col_machine)$(rgb_fg_bg_ps1 "000000" $col_pwd)$(rgb_fg_bg_ps1 "cccccc" $col_pwd) $PWD $(no_color_ps1)$(rgb_fg_ps1 $col_pwd)"
   LINE_3="$(rgb_fg_ps1 $col_conda)╰─$(rgb_fg_ps1 $palette_accent) >>> $(rgb_fg_ps1 $palette_text)"
 
   PS1="\r\n${LINE_1}\r\n${LINE_3}"
 }
-
-#prompt_cmd() {
-# LINE_1="$(rgb_fg_ps1 $palette_primary_dark)┌───$(rgb_fg_ps1 $palette_primary)$(rgb_fg_bg_ps1 $palette_text $palette_primary) $CONDA_ENV $(rgb_fg_bg_ps1 $palette_primary)$(no_color_ps1) $(rgb_fg_ps1 $palette_primary_dark)─ $(rgb_fg_ps1 $palette_secondary)$(basename $PWD)$(rgb_fg_ps1 $palette_primary_dark)"
-#  TMP_GIT_BRANCH="$(gitbranch)"
-#  LINE_1="$(rgb_fg_ps1 $palette_primary_dark)┌───( $(fg_gradient_ps1 $palette_gradient_start $palette_gradient_end ''$(current_user)@$HOSTNAME' )-[ '$(basename $PWD)' ]')"
-#  LINE_2="$(rgb_fg_ps1 $palette_primary_dark)│ $(fg_gradient_ps1 $palette_gradient_start $palette_gradient_end $(short_datetime)) $(rgb_fg_ps1 $palette_accent)~ $(rgb_fg_ps1 $palette_secondary)$TMP_GIT_BRANCH"
-#  LINE_3="$(rgb_fg_ps1 $palette_primary_dark)└─$(rgb_fg_ps1 $palette_accent) λ $(rgb_fg_ps1 $palette_text)"
-#
-#  PS1="\r\n${LINE_1}\r\n${LINE_2}\r\n${LINE_3}"
-#}
-#
-#prompt_cmd() {
-#  DATETIME_1="$(long_date) $(short_time)"
-#  LINE_1="$(rgb_bg_ps1 $palette_variant_1) $(no_color_ps1) $(fg_gradient_ps1 $palette_gradient_start $palette_gradient_end $(current_user)@$HOSTNAME)$(rgb_fg_ps1 $palette_accent) >> $(fg_gradient_ps1 $palette_gradient_start $palette_gradient_end $(dirs)) "
-#  LINE_2="$(rgb_bg_ps1 $palette_variant_2) $(no_color_ps1) $(fg_gradient_ps1 $palette_gradient_start $palette_gradient_end $DATETIME_1) $(rgb_fg_ps1 $palette_accent)$(gitbranch)"
-#  LINE_3="$(rgb_bg_ps1 $palette_variant_3) $(no_color_ps1) $(rgb_fg_ps1 $palette_accent)$ $(rgb_fg_ps1 $palette_text)"
-#
-#  PS1="\r\n${LINE_1}\r\n${LINE_2}\r\n${LINE_3}"
-#}
-#
-#prompt_cmd() {
-#  DATETIME_1="$(short_datetime)"
-#  LINE_1="$(rgb_bg_ps1 $palette_primary)  $(no_color_ps1) $(rgb_fg_ps1 $palette_primary)$(current_user)$(rgb_fg_ps1 $palette_accent) >> $(rgb_fg_ps1 $palette_secondary)$(basename $PWD) "
-#  LINE_2="$(rgb_bg_ps1 $palette_primary)  $(no_color_ps1) $(rgb_fg_ps1 $palette_primary)$(short_date) $(rgb_fg_ps1 $palette_primary_dark)$(short_time) $(rgb_fg_ps1 $palette_accent)λ $(rgb_fg_ps1 $palette_text)"
-#
-#  PS1="\r\n${LINE_1}\r\n${LINE_2}"
-#}
-
 
 export PROMPT_COMMAND='prompt_cmd'
