@@ -12,8 +12,9 @@ hex_color_to_rgb() {
 }
 
 col_1="EFB036,694602"
-col_2="3B6790,00000"
+col_2="#A93F55,cccccc"
 col_3="23486A,cccccc"
+col_4="#A4D4B4,00000"
 
 rgb_ps1() {
     main=${1%,*}
@@ -43,10 +44,16 @@ prompt_cmd() {
     if [ -n "$STY" ]; then
         LINE_1="╭── ::$CONDA_ENV:: | $ENV | $PWD"
         LINE_2="╰─ >>> "
+        if [ -n "$GIT_BRANCH" ]; then
+            LINE_1="$LINE_1 |  $GIT_BRANCH"
+        fi
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     else  # else, plently of colors!
         LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'a') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $PWD $(rgb_ps1 $col_3 'f')"
         LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
+        if [ -n "$GIT_BRANCH" ]; then
+            LINE_1="$LINE_1$(rgb_ps1 $col_4 'a')  $GIT_BRANCH "
+        fi
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     fi
 }
