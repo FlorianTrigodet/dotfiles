@@ -1,0 +1,48 @@
+#!/bin/bash
+# bunch of commmands to make cute prompt
+
+# turns the #123b84 color codes to 203;133;54 rgb codes
+hex_color_to_rgb() {
+  hex=${1#"#"}
+
+  r=$((0x${hex:0:2}))
+  g=$((0x${hex:2:2}))
+  b=$((0x${hex:4:2}))
+
+  printf "%d;%d;%d\n" "$r" "$g" "$b"
+}
+
+col_1="EFB036,694602"
+col_2='3B6790,00000'
+col_3='23486A,cccccc'
+
+rgb_ps1() {
+    main=${1%,*}
+    accent=${1#*,}
+
+    # u=uniform, main is bg, accent is fg no arrow
+    if [ "$2" == "u" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
+    # a=arrow, start with indended arrow, main is bg, accent is fg
+    elif [ "$2" == "a" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
+    # f=forground, main is forground, bg is not set
+    elif [ "$2" = "f" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$main")m\]"
+    # s=stop, reset the colors
+    elif [ "$1" == "s" ]; then
+        printf "\[\033[0m\]"
+    fi
+}
+
+
+prompt_cmd() {
+  #TMP_GIT_BRANCH="$(gitbranch)"
+  CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
+  LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'a') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $PWD $(rgb_ps1 $col_3 'f')"
+  LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
+
+  PS1="\r\n${LINE_1}\r\n${LINE_2}"
+}
+
+export PROMPT_COMMAND='prompt_cmd'
