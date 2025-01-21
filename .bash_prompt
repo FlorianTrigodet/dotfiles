@@ -52,7 +52,7 @@ prompt_cmd() {
         LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'a') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $PWD $(rgb_ps1 $col_3 'f')"
         LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
         if [ -n "$GIT_BRANCH" ]; then
-            LINE_1="$LINE_1$(rgb_ps1 $col_4 'a')  $GIT_BRANCH "
+            LINE_1="$LINE_1$(rgb_ps1 $col_4 'a')  $GIT_BRANCH $(rgb_ps1 's')"
         fi
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     fi
