@@ -32,6 +32,7 @@ alias sb="source ~/.bash_profile"
 alias sedt="sed 's/\t/ | /g'"
 alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 alias f="clear"
+alias website="bundle exec jekyll serve --incremental"
 poule () {
     echo "
                    ,~.
