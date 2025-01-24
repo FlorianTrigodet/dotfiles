@@ -58,6 +58,9 @@ prompt_cmd() {
         if [ -n "$GIT_BRANCH" ]; then
             LINE_1="$LINE_1$(rgb_ps1 $col_4 'a')  $GIT_BRANCH $(rgb_ps1 's')"
         fi
+        #date=$(date)
+        # add runtime at the end of prompt line
+        #LINE_1="$(printf "%-$(( COLUMNS - ${#date} ))s%s" "$LINE_1" "$date")"
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     fi
 }
