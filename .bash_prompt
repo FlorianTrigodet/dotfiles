@@ -26,6 +26,9 @@ rgb_ps1() {
     # a=arrow, start with indended arrow, main is bg, accent is fg
     elif [ "$2" == "a" ]; then
         printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
+    # ab=arrow + bold
+    elif [ "$2" == "ab" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m\]"
     # f=forground, main is forground, bg is not set
     elif [ "$2" = "f" ]; then
         printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$main")m\]"
@@ -35,10 +38,11 @@ rgb_ps1() {
     fi
 }
 
-
 prompt_cmd() {
     GIT_BRANCH="$(git branch --show-current 2>/dev/null)"
     CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
+
+    SHORT_PWD="$(echo ${PWD%\/*} | sed -r 's|/(..)[^/]*|/\1|g')"
 
     # if in a screen, no color for you
     if [ -n "$STY" ]; then
@@ -49,7 +53,7 @@ prompt_cmd() {
         fi
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     else  # else, plently of colors!
-        LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'a') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $PWD $(rgb_ps1 $col_3 'f')"
+        LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'ab') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $SHORT_PWD/\W $(rgb_ps1 $col_3 'f')"
         LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
         if [ -n "$GIT_BRANCH" ]; then
             LINE_1="$LINE_1$(rgb_ps1 $col_4 'a')  $GIT_BRANCH $(rgb_ps1 's')"
