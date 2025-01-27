@@ -39,10 +39,12 @@ rgb_ps1() {
 }
 
 prompt_cmd() {
+    _PS1_now=$(date +%s)
     GIT_BRANCH="$(git branch --show-current 2>/dev/null)"
     CONDA_ENV="$(echo $CONDA_DEFAULT_ENV | awk -F '/' '{print $NF}')"
 
     SHORT_PWD="$(echo ${PWD%\/*} | sed -r 's|/(..)[^/]*|/\1|g')"
+    CURRENT_DIR="$(echo ${PWD##*\/})"
 
     # if in a screen, no color for you
     if [ -n "$STY" ]; then
@@ -53,16 +55,27 @@ prompt_cmd() {
         fi
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     else  # else, plently of colors!
-        LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'ab') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $SHORT_PWD/\W $(rgb_ps1 $col_3 'f')"
+        LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')$(rgb_ps1 $col_2 'ab') $ENV $(rgb_ps1 $col_2 'f')$(rgb_ps1 $col_3 'a') $SHORT_PWD/$CURRENT_DIR $(rgb_ps1 $col_3 'f')"
         LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
+
+        # get the length of LINE_1: sum length of various variable + fixed characters like arrows etc
+        length_line_1=$(( 20 + ${#CONDA_ENV} +  ${#ENV} + ${#SHORT_PWD} + ${#CURRENT_DIR} ))
+
         if [ -n "$GIT_BRANCH" ]; then
             LINE_1="$LINE_1$(rgb_ps1 $col_4 'a')  $GIT_BRANCH $(rgb_ps1 's')"
+            length_line_1=$(( $length_line_1 + 5 + ${#GIT_BRANCH} ))
         fi
-        #date=$(date)
+        time=$(( _PS1_now - _PS1_lastcmd ))
+
         # add runtime at the end of prompt line
-        #LINE_1="$(printf "%-$(( COLUMNS - ${#date} ))s%s" "$LINE_1" "$date")"
+        LINE_1="${LINE_1}$(rgb_ps1 's')$(printf '%*s' $(( $(tput cols) - $length_line_1 - ${#time} )) "")$(rgb_ps1 $col_1 'u')$time$(rgb_ps1 's')"
+
+        # update time stamp
+        _PS1_lastcmd=$_PS1_now
+
         PS1="\r\n${LINE_1}\r\n${LINE_2}"
     fi
 }
 
 export PROMPT_COMMAND='prompt_cmd'
+_PS1_lastcmd=$(date +%s)

@@ -33,6 +33,9 @@ alias sedt="sed 's/\t/ | /g'"
 alias ws="PS1=':: \$CONDA_DEFAULT_ENV :: [\u@\h \W]\$ '"
 alias f="clear"
 alias website="bundle exec jekyll serve --incremental"
+cn () {
+    head -n 1 $1 | tr '\t' '\n' | cat -n
+}
 poule () {
     echo "
                    ,~.
