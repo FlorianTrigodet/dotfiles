@@ -124,6 +124,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
+    alias af="module load AlphaFold"
 	alias ml="cd $GROUPDSS && ll"
 	alias wd="cd /fs/dss/groups/agecodatasci/PROJECTS/LONG_READ_ASSEMBLY_ERRORS  && ll"
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
