@@ -135,6 +135,9 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # get your anvio port number
     source /fs/dss/groups/agecodatasci/SOFTWARE/SHARED/port_allocation
 
+    # overwrite default sacct format
+    export SACCT_FORMAT="jobid,jobname%25,AllocCPUS,State,ExitCode"
+
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
