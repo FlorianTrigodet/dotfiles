@@ -133,7 +133,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     export PATH="$PATH:$GROUPDSS/SOFTWARE/EXECUTABLES:$HOME/bin:$HOME/.local/bin"
 
     # get your anvio port number
-    source /fs/dss/groups/agecodatasci/SOFTWARE/SHARED/port_allocation
+    source /fs/s6k/groups/agecodatasci/SOFTWARE/SHARED/port_allocation
 
     # overwrite default sacct format
     export SACCT_FORMAT="jobid,jobname%25,AllocCPUS,State,ExitCode"

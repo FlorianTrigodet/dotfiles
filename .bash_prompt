@@ -68,7 +68,7 @@ prompt_cmd() {
         time=$(( _PS1_now - _PS1_lastcmd ))
 
         # add runtime at the end of prompt line
-        LINE_1="${LINE_1}$(rgb_ps1 's')$(printf '%*s' $(( $(tput cols) - $length_line_1 - ${#time} )) "")$(rgb_ps1 $col_1 'u')$time$(rgb_ps1 's')"
+        #LINE_1="${LINE_1}$(rgb_ps1 's')$(printf '%*s' $(( $(tput cols) - $length_line_1 - ${#time} )) "")$(rgb_ps1 $col_1 'u')$time$(rgb_ps1 's')"
 
         # update time stamp
         _PS1_lastcmd=$_PS1_now
