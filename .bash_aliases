@@ -126,14 +126,15 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	}
     alias af="module load AlphaFold"
 	alias ml="cd $GROUPDSS && ll"
-	alias wd="cd /fs/dss/groups/agecodatasci/PROJECTS/LONG_READ_ASSEMBLY_ERRORS  && ll"
-	alias wdgr="cd /fs/dss/groups/agecodatasci/PROJECTS/DGRs/TARA/row_by_row_filtered_files/subset_by_size_row_by_row/biosample_final/BioSamples/surface_water_layer_samples_5_samples/SAMEA2732139  && ll"
+	alias wd="cd /fs/s6k/groups/agecodatasci/PROJECTS/LONG_READ_ASSEMBLY_ERRORS  && ll"
+	alias wdgr="cd /fs/s6k/groups/agecodatasci/PROJECTS/DGRs/TARA/row_by_row_filtered_files/subset_by_size_row_by_row/biosample_final/BioSamples/surface_water_layer_samples_5_samples/SAMEA2732139  && ll"
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 	alias globdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GlobDB/r226 && ll"
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
+    alias sq="squeue -o \"%.18i %.9P %.15j %.8u %.2t %.10M %.6D %R %.6C %.6m\""
 	alias q="sinfo --partition=mpcs_hifmb.p,mpcp_hifmb.p -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ;
     squeue -u patz5242 -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; \
 		squeue -u patz5242 -O 'arrayjobid:13,name:35,stdout:120'"
