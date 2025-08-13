@@ -75,7 +75,7 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 	alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 midway | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
     alias rosa='ssh -L 8180:localhost:8180  rosa | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
     alias rosa1='ssh -L 8181:localhost:8181 rosa | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
-	anvi-activate-dev () {
+	ad () {
 	    conda activate anvio-dev
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
@@ -112,7 +112,7 @@ fi
 
 # specific to carl
 if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
-	anvi-activate-dev () {
+	ad () {
 	    conda activate $GROUPDSS/VIRTUAL_ENVS/anvio-dev/
         export CONDA_DEFAULT_ENV="anvi'o dev"
 	}
@@ -120,7 +120,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	    conda activate $GROUPDSS/VIRTUAL_ENVS/anvio-8
         export CONDA_DEFAULT_ENV="anvi'o 8"
     }
-	anvi-activate-flo () {
+	af () {
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}

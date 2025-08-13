@@ -63,7 +63,7 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 
 	export LDFLAGS="-L/usr/local/opt/ruby/lib"
 	export CPPFLAGS="-I/usr/local/opt/ruby/include"
-	export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
+	export PATH="/Users/fltrig002/.local/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
 
   # ruby in the path
   export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
