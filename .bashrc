@@ -138,6 +138,9 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # overwrite default sacct format
     export SACCT_FORMAT="jobid,jobname%25,AllocCPUS,State,ExitCode"
 
+    # NCBI API key
+    export NCBI_API_KEY=3d1e017ab7f6aad1b0c63c0b430586eeef09
+
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/cm/shared/uniol/sw/SYSTEM/Mamba/24.3.0-0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
