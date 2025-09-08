@@ -79,6 +79,7 @@ let vim_markdown_preview_hotkey='<C-m>'
 
 " jedi stuff
 let g:jedi#show_call_signatures = 0
+let g:jedi#use_splits_not_buffers = "left"
 
 " DNA stuff
 cnoreabbrev DNA_col set syntax=DNA
