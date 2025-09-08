@@ -77,6 +77,9 @@ let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
 
+" leader is space
+let mapleader=" "
+
 " jedi stuff
 let g:jedi#show_call_signatures = 0
 let g:jedi#use_splits_not_buffers = "left"
