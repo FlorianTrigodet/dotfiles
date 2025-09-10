@@ -81,8 +81,9 @@ let vim_markdown_preview_hotkey='<C-m>'
 let mapleader=" "
 
 " jedi stuff
-let g:jedi#show_call_signatures = 0
+let g:jedi#show_call_signatures = 1
 let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#smart_auto_mappings = 1
 
 " DNA stuff
 cnoreabbrev DNA_col set syntax=DNA
