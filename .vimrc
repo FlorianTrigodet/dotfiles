@@ -12,6 +12,7 @@
 " git clone https://github.com/jamshedvesuna/vim-markdown-preview
 " git clone --recursive https://github.com/davidhalter/jedi-vim.git
 " git clone https://github.com/preservim/vim-indent-guides.git
+" git clone https://github.com/tmhedberg/SimpylFold.git
 
 set nocompatible
 
