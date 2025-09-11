@@ -84,6 +84,10 @@ let mapleader=" "
 let g:jedi#show_call_signatures = 1
 let g:jedi#smart_auto_mappings = 1
 
+" folding on indent
+set foldmethod=indent
+
+
 " DNA stuff
 cnoreabbrev DNA_col set syntax=DNA
 
