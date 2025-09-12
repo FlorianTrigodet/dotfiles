@@ -84,6 +84,9 @@ let mapleader=" "
 let g:jedi#show_call_signatures = 1
 let g:jedi#smart_auto_mappings = 1
 
+" toggle tagbar
+nmap <leader>v :TagbarToggle<CR>
+
 " DNA stuff
 cnoreabbrev DNA_col set syntax=DNA
 
