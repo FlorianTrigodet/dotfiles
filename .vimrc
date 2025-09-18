@@ -90,4 +90,5 @@ nmap <leader>v :TagbarToggle<CR>
 " DNA stuff
 cnoreabbrev DNA_col set syntax=DNA
 
-
+" Copilot off by default
+let g:copilot_enabled = 0
