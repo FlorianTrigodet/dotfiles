@@ -6,4 +6,4 @@
 " Usage
 "
 " copy to $HOME/.vim/ftdetect directory
-au BufNewFile,BufRead Snakefile,*.smk set filetype=snakemake 
+au BufNewFile,BufRead Snakefile,*.smk set filetype=python

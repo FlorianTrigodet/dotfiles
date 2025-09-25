@@ -12,6 +12,10 @@
 " git clone https://github.com/jamshedvesuna/vim-markdown-preview
 " git clone --recursive https://github.com/davidhalter/jedi-vim.git
 " git clone https://github.com/preservim/vim-indent-guides.git
+"
+" For Copilot. I installed it using the native pkg manager
+" git clone --depth=1 https://github.com/github/copilot.vim.git \
+"  ~/.vim/pack/github/start/copilot.vim
 
 set nocompatible
 
@@ -90,7 +94,30 @@ nmap <leader>v :TagbarToggle<CR>
 " DNA stuff
 cnoreabbrev DNA_col set syntax=DNA
 
-" Copilot off by default
-let g:copilot_enabled = 0
+" === Copilot toggle ===
+let g:copilot_is_loaded = 0
+
+function! ToggleCopilot()
+  if g:copilot_is_loaded
+    " Disable Copilot
+    Copilot disable
+    let g:copilot_is_loaded = 0
+    echo "Copilot disabled"
+  else
+    " Load plugin if not loaded yet
+    if !exists('g:loaded_copilot')
+      packadd copilot.vim
+    endif
+    Copilot enable
+    let g:copilot_is_loaded = 1
+    echo "Copilot enabled"
+  endif
+endfunction
+
+" Map a keybinding (F12 in this example)
+nnoremap <leader>c :call ToggleCopilot()<CR>
 
 
+" yank to clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
