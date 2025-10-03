@@ -2,12 +2,12 @@
 " Then:
 " for i in $(ls ~/github/anvio/anvio/docs/artifacts/ | grep -v 00_README.md | grep .md | sed 's/.md//')
 " do
-"     short=$(echo "$i" | cut -c1-50)  # take first 50 characters
+"     short=$(echo "$i" | cut -c1-49)  # take first 50 characters
 "     echo inoreabbrev \<buffer\> ${i}i {% include ARTIFACT name=\"${i}\" %} >> ~/.vim/ftplugin/markdown.vim
 " done
 "
 " for i in $(ls ~/github/anvio/anvio/docs/programs/ | grep -v 00_README.md | grep .md | sed 's/.md//'); do
-"     short=$(echo "$i" | cut -c1-50)  # take first 50 characters
+"     short=$(echo "$i" | cut -c1-49)  # take first 50 characters
 "     echo "inoreabbrev <buffer> ${short}i {% include PROGRAM name=\"$i\" %}" >> ~/.vim/ftplugin/markdown.vim
 " done
 
@@ -248,7 +248,7 @@ inoreabbrev <buffer> anvi-run-workflowi {% include PROGRAM name="anvi-run-workfl
 inoreabbrev <buffer> anvi-scan-trnasi {% include PROGRAM name="anvi-scan-trnas" %}
 inoreabbrev <buffer> anvi-script-add-default-collectioni {% include PROGRAM name="anvi-script-add-default-collection" %}
 inoreabbrev <buffer> anvi-script-as-markdowni {% include PROGRAM name="anvi-script-as-markdown" %}
-inoreabbrev <buffer> anvi-script-augustus-output-to-external-gene-callsi {% include PROGRAM name="anvi-script-augustus-output-to-external-gene-calls" %}
+inoreabbrev <buffer> anvi-script-augustus-output-to-external-gene-calli {% include PROGRAM name="anvi-script-augustus-output-to-external-gene-calls" %}
 inoreabbrev <buffer> anvi-script-checkm-tree-to-interactivei {% include PROGRAM name="anvi-script-checkm-tree-to-interactive" %}
 inoreabbrev <buffer> anvi-script-compute-ani-for-fastai {% include PROGRAM name="anvi-script-compute-ani-for-fasta" %}
 inoreabbrev <buffer> anvi-script-estimate-metabolic-independencei {% include PROGRAM name="anvi-script-estimate-metabolic-independence" %}
@@ -256,7 +256,7 @@ inoreabbrev <buffer> anvi-script-filter-fasta-by-blasti {% include PROGRAM name=
 inoreabbrev <buffer> anvi-script-filter-hmm-hits-tablei {% include PROGRAM name="anvi-script-filter-hmm-hits-table" %}
 inoreabbrev <buffer> anvi-script-find-misassembliesi {% include PROGRAM name="anvi-script-find-misassemblies" %}
 inoreabbrev <buffer> anvi-script-fix-homopolymer-indelsi {% include PROGRAM name="anvi-script-fix-homopolymer-indels" %}
-inoreabbrev <buffer> anvi-script-gen-defense-finder-models-to-hmm-direci {% include PROGRAM name="anvi-script-gen-defense-finder-models-to-hmm-directory" %}
+inoreabbrev <buffer> anvi-script-gen-defense-finder-models-to-hmm-direi {% include PROGRAM name="anvi-script-gen-defense-finder-models-to-hmm-directory" %}
 inoreabbrev <buffer> anvi-script-gen-distribution-of-genes-in-a-bini {% include PROGRAM name="anvi-script-gen-distribution-of-genes-in-a-bin" %}
 inoreabbrev <buffer> anvi-script-gen-function-matrix-across-genomesi {% include PROGRAM name="anvi-script-gen-function-matrix-across-genomes" %}
 inoreabbrev <buffer> anvi-script-gen-genomes-filei {% include PROGRAM name="anvi-script-gen-genomes-file" %}
