@@ -1,6 +1,6 @@
 # find by typing `uname -n`
 export my_2019_macbook="10-19-3-198.ddhcp.uni-oldenburg.de:vpn-172-26-2-159.awi.de;vpn-172-26-1-137.awi.de:MED42038-2.local:MED42038.local:med42038.lan:10-19-13-188.ddhcp.uni-oldenburg.de:med42038.home:10-19-14-39.ddhcp.uni-oldenburg.de"
-export my_2023_macbook="134-1-38-247.awi.de;10-18-76-121.ddhcp.uni-oldenburg.de;134-1-40-211.awi.de;134-1-39-58.awi.de;Mac;ohif01m027.home:10-17-3-15.ddhcp.uni-oldenburg.de:ohif01m027.w2kroot.uni-oldenburg.de:ohif01m027:ohif01m027.local:10-19-7-214.ddhcp.uni-oldenburg.de:10-19-6-209.ddhcp.uni-oldenburg.de"
+export my_2023_macbook="ohif01m027.w2kroot.uni-oldenburg.de;134-1-38-247.awi.de;10-18-76-121.ddhcp.uni-oldenburg.de;134-1-40-211.awi.de;134-1-39-58.awi.de;Mac;ohif01m027.home:10-17-3-15.ddhcp.uni-oldenburg.de:ohif01m027.w2kroot.uni-oldenburg.de:ohif01m027:ohif01m027.local:10-19-7-214.ddhcp.uni-oldenburg.de:10-19-6-209.ddhcp.uni-oldenburg.de"
 export penduick_server="penduick"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local:midway2-0355.rcc.local"
 export rosa_server="hpcl001;hpcl002;hpcl003;mpcs043;mpcs044;mpcs045;mpcs046;mpcs047;mpcs048;mpcs049;mpcs050;mpcs051;mpcs052;mpcs053;mpcs054;mpcs055;mpcs056"
