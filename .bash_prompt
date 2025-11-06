@@ -10,33 +10,27 @@ hex_color_to_rgb() {
     printf "%d;%d;%d" "$r" "$g" "$b"
 }
 
-# if truecolor not available:
-if [[ "$COLORTERM" != *"truecolor"* && "$COLORTERM" != *"24bit"* ]]; then
-    echo "[.bash_prompt] Truecolor not supported — falling back to no color."
-    rgb_ps1() { printf ""; }
-else
-    rgb_ps1() {
-        main=${1%,*}
-        accent=${1#*,}
+rgb_ps1() {
+    main=${1%,*}
+    accent=${1#*,}
 
-        # u=uniform, main is bg, accent is fg no arrow
-        if [ "$2" == "u" ]; then
-            printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
-        # a=arrow, start with indended arrow, main is bg, accent is fg
-        elif [ "$2" == "a" ]; then
-            printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
-        # ab=arrow + bold
-        elif [ "$2" == "ab" ]; then
-            printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m\]"
-        # f=forground, main is forground, bg is not set
-        elif [ "$2" = "f" ]; then
-            printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$main")m\]"
-        # s=stop, reset the colors
-        elif [ "$1" == "s" ]; then
-            printf "\[\033[0m\]"
-        fi
-    }
-fi
+    # u=uniform, main is bg, accent is fg no arrow
+    if [ "$2" == "u" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
+    # a=arrow, start with indended arrow, main is bg, accent is fg
+    elif [ "$2" == "a" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]"
+    # ab=arrow + bold
+    elif [ "$2" == "ab" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "00000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m\]"
+    # f=forground, main is forground, bg is not set
+    elif [ "$2" = "f" ]; then
+        printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$main")m\]"
+    # s=stop, reset the colors
+    elif [ "$1" == "s" ]; then
+        printf "\[\033[0m\]"
+    fi
+}
 
 # Same as rgb_ps1, but without \[ \] escapes (for normal echo output)
 rgb_raw() {
@@ -161,7 +155,6 @@ if [ -n "$FORCE_PALETTE" ]; then
 else
     load_palette
 fi
-
 
 # -- THE command --
 prompt_cmd() {
