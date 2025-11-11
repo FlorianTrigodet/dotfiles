@@ -259,7 +259,7 @@ $(rgb_ps1 $col_3 'a') $SHORT_PWD/$CURRENT_DIR $(rgb_ps1 $col_3 'f')"
 
     LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
 
-    PS1="\r\n${LINE_1}\r\n${LINE_2}\[\033[0m\]"
+    PS1="\r\n${LINE_1}\[\033[0m\]\r\n${LINE_2}\[\033[0m\]"
 }
 
 export PROMPT_COMMAND='prompt_cmd'
