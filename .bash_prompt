@@ -198,7 +198,7 @@ $(rgb_raw $col_3 'a') $preview_shortpwd $(rgb_raw $col_3 'f')\
 $(rgb_raw $col_4 'a')  $preview_branch $(rgb_raw 's')"
         LINE_2="$(rgb_raw $col_1 'f')╰─ >>> $(rgb_raw 's')"
 
-        echo -e "${LINE_1}\n${LINE_2}   [$name]\033[0m"
+        echo -e "${LINE_1}\033[0m\n${LINE_2}   [$name]\033[0m"
     done < "$file"
 
     # Restore original palette
