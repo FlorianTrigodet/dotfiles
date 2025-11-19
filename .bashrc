@@ -119,9 +119,6 @@ fi
 
 if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     # load modules
-    #module load hpc-env/13.1
-    #module load Miniconda3
-    #module load Mamba
 
     # go to the working directory
     cd $GROUPDSS && ll
@@ -136,7 +133,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
     source /fs/s6k/groups/agecodatasci/SOFTWARE/SHARED/port_allocation
 
     # overwrite default sacct format
-    export SACCT_FORMAT="jobid,jobname%25,AllocCPUS,State,ExitCode,Elapsed"
+    export SACCT_FORMAT="jobid,jobname%25,NodeList,AllocCPUS,State,ExitCode,Elapsed"
 
     # NCBI API key
     export NCBI_API_KEY=3d1e017ab7f6aad1b0c63c0b430586eeef09
