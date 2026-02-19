@@ -3,8 +3,7 @@ export PATH=$PATH:~/bin
 
 # pull from yadm before anything
 if hash yadm 2>/dev/null; then
-    #yadm pull
-    echo 'nothing to see'
+    yadm pull
 else
     echo 'yadm binary not found. dotfiles were not pulled. install here: https://github.com/TheLocehiliosan/yadm'
 fi
