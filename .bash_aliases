@@ -129,6 +129,10 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	    conda activate ~/VIRTUAL_ENVS/anvio-flo/
         export CONDA_DEFAULT_ENV="anvi'o flo"
 	}
+	af2 () {
+	    conda activate ~/VIRTUAL_ENVS/anvio-flo-2/
+        export CONDA_DEFAULT_ENV="anvi'o flo 2"
+	}
     alias alphaf="module load AlphaFold"
 	alias ml="cd $GROUPDSS && ll"
 	alias wd="cd /fs/s6k/groups/agecodatasci/PROJECTS/ECOPHYLO/SURFACE_OCEAN  && ll"
@@ -138,6 +142,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 	alias globdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GlobDB/r226 && ll"
+	alias sa="sacct --unit G"
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
