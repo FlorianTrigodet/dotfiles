@@ -61,12 +61,8 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
     # export PS1="\[\e[0m\e[40m\e[1;30m\] :: \$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}') :: \[\e[0m\e[40m\e[1;41m\] LOCAL \[\e[0m\e[0m \[\e[1;34m\]\]\w\[\e[m\] \[\e[1;31m\]\n>>>\[\e[m\] \[\e[0m\]"
     ENV='☕ LOCAL'; source ~/.bash_prompt
 
-	export LDFLAGS="-L/usr/local/opt/ruby/lib"
-	export CPPFLAGS="-I/usr/local/opt/ruby/include"
-	export PATH="/Users/fltrig002/.local/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
 
-  # ruby in the path
-  export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+  export PATH="/opt/homebrew/opt/ruby@3.1/bin:/opt/homebrew/lib/ruby/gems/3.1.0/bin:$HOME/.local/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
   # and you'll need that
   export LANG=en_US.UTF-8
   export LC_ALL=en_US.UTF-8
