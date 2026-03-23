@@ -54,6 +54,9 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
     unset __conda_setup
     # <<< conda initialize <<<
 
+    # bash autocompletion
+    [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
     # brew stuff
     eval "$(/opt/homebrew/bin/brew shellenv)"
 

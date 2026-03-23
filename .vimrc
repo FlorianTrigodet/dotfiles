@@ -31,6 +31,9 @@ set nospell
 " no wrap
 set nowrap
 
+" completion style
+set wildmode=longest,list,full
+
 " coloration
 filetype plugin indent on
 set hlsearch
