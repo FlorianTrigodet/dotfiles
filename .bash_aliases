@@ -32,6 +32,7 @@ alias sb="source ~/.bash_profile"
 alias sedt="sed 's/\t/ | /g'"
 alias f="clear"
 alias website="bundle exec jekyll serve --incremental"
+alias gv='vim -c "G | only"'
 
 gles () {
     gunzip -c "$1" | les
