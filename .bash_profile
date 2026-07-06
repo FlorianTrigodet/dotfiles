@@ -4,7 +4,7 @@ export PATH=$PATH:~/bin
 # pull from yadm before anything
 if hash yadm 2>/dev/null; then
     echo "yo"
-    #yadm pull
+    yadm pull
 else
     echo 'yadm binary not found. dotfiles were not pulled. install here: https://github.com/TheLocehiliosan/yadm'
 fi
@@ -13,3 +13,7 @@ fi
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
+
+# >>> Codex installer >>>
+export PATH="/Users/fltrig002/.local/bin:$PATH"
+# <<< Codex installer <<<
