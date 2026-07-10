@@ -137,7 +137,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias wdp="cd /fs/s6k/groups/agecodatasci/PROJECTS/POLAR_AUTOSAMPLERS/YIPPEE/hifiasm/01_CONTIGS/ && ll"
 	alias wdgr="cd /fs/s6k/groups/agecodatasci/PROJECTS/DGRs/TARA/row_by_row_filtered_files/subset_by_size_row_by_row/biosample_final/BioSamples/surface_water_layer_samples_5_samples/SAMEA2732139  && ll"
   alias a="cd $GROUPDSS/SOFTWARE/anvio/anvio/ && ll"
-  alias aaf="cd /fs/s6k/groups/agecodatasci/PEOPLE/FlorianTrigodet/SOFTWARE/anvio/anvio/ && ll"
+  alias aa="cd /fs/s6k/groups/agecodatasci/PEOPLE/FlorianTrigodet/SOFTWARE/anvio/anvio/ && ll"
 	alias gtdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GTDB/release214 && pwd"
 	alias globdb="cd $GROUPDSS/RESOURCES/PUBLIC/GENOMES/GlobDB/r226 && ll"
 	alias sa="sacct --unit G"
