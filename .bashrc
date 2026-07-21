@@ -66,9 +66,6 @@ if [[ "$my_2023_macbook" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "mine" ]]; t
 
   export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/4.0.0/bin:$HOME/.local/bin:$HOME/bin:/opt/homebrew/bin:$PATH"
 
-  # colabfold
-  export PATH="/Users/fltrig002/github/localcolabfold/.pixi/envs/default/bin:${PATH}"
-
   # and you'll need that
   export LANG=en_US.UTF-8
   export LC_ALL=en_US.UTF-8
