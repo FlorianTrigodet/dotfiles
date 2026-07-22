@@ -4,3 +4,5 @@ channels:
   - r
   - conda-forge
 changeps1: false
+envs_dirs:
+  - $GROUPDSS/VIRTUAL_ENVS

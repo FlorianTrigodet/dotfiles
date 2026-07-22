@@ -144,7 +144,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 
 	alias cl="clusterize"
 	alias clh="column -t ~/.clusterize_history | tail"
-    alias sq="squeue -o \"%.18i %.9P %.15j %.8u %.2t %.10M %.6D %R %.6C %.6m\""
+    alias sq="squeue -o \"%.25i %.9P %.15j %.8u %.2t %.10M %.6D %R %.6C %.6m\""
 	alias q="sinfo --partition=mpcs_hifmb.p,mpcp_hifmb.p -N -o '%N %P %11T %20E %C %8m %8e %8d'; echo ;
     squeue -u patz5242 -o '%20i %35j %8u %5C %13m %8T %10M %9l %6D %R'; echo ; \
 		squeue -u patz5242 -O 'arrayjobid:13,name:35,stdout:120'"
