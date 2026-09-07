@@ -14,6 +14,43 @@ hex_color_to_rgb() {
     printf "%d;%d;%d" "$r" "$g" "$b"
 }
 
+### ───────────────────────────────
+###  BACKGROUND MODE (dark / light terminal profile)
+### ───────────────────────────────
+
+# 'dark'  -> terminal profile with a black background (the default)
+# 'light' -> terminal profile with a white background
+# Set it before sourcing this file to make a choice stick in new shells.
+: "${PROMPT_BG:=dark}"
+export PROMPT_BG
+
+# The colour the prompt treats as "the terminal background"
+term_bg_color() {
+    if [ "$PROMPT_BG" = "light" ]; then printf "ffffff"; else printf "000000"; fi
+}
+
+# Glyphs drawn with mode 'f' (╭──, the  separators, ╰─ >>>) sit directly on the
+# terminal background, so bright palette colours wash out on a white profile.
+# Darken those toward a fixed target luminance; leave already-dark ones alone.
+GLYPH_TARGET_LUM=95
+
+glyph_color() {
+    local hex=${1#"#"}
+    [ "$PROMPT_BG" = "light" ] || { printf "%s" "$hex"; return; }
+
+    local r=$((0x${hex:0:2})) g=$((0x${hex:2:2})) b=$((0x${hex:4:2}))
+    local lum=$(( (299 * r + 587 * g + 114 * b) / 1000 ))
+
+    # Dark enough to read on white already
+    if [ "$lum" -le $((GLYPH_TARGET_LUM + 15)) ]; then
+        printf "%s" "$hex"
+        return
+    fi
+
+    local pct=$((100 * GLYPH_TARGET_LUM / lum))
+    printf "%02x%02x%02x" $((r * pct / 100)) $((g * pct / 100)) $((b * pct / 100))
+}
+
 # Produce PS1-safe ANSI color sequences (escaped with \[ \])
 rgb_ps1() {
     main=${1%,*}
@@ -21,9 +58,10 @@ rgb_ps1() {
 
     case "$2" in
         u)  printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]" ;;
-        a)  printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "000000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]" ;;
-        ab) printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "000000");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m\]" ;;
+        a)  printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$(term_bg_color)");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m\]" ;;
+        ab) printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$(term_bg_color)");48;2;$(hex_color_to_rgb "$main")m\]\[\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m\]" ;;
         f)  printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$main")m\]" ;;
+        g)  printf "\[\033[0m\]\[\033[38;2;$(hex_color_to_rgb "$(glyph_color "$main")")m\]" ;;
         s)  printf "\[\033[0m\]" ;;
     esac
 }
@@ -35,9 +73,10 @@ rgb_raw() {
 
     case "$2" in
         u)  printf "\033[0m\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m" ;;
-        a)  printf "\033[0m\033[38;2;$(hex_color_to_rgb "000000");48;2;$(hex_color_to_rgb "$main")m\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m" ;;
-        ab) printf "\033[0m\033[38;2;$(hex_color_to_rgb "000000");48;2;$(hex_color_to_rgb "$main")m\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m" ;;
+        a)  printf "\033[0m\033[38;2;$(hex_color_to_rgb "$(term_bg_color)");48;2;$(hex_color_to_rgb "$main")m\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main")m" ;;
+        ab) printf "\033[0m\033[38;2;$(hex_color_to_rgb "$(term_bg_color)");48;2;$(hex_color_to_rgb "$main")m\033[38;2;$(hex_color_to_rgb "$accent");48;2;$(hex_color_to_rgb "$main");1m" ;;
         f)  printf "\033[0m\033[38;2;$(hex_color_to_rgb "$main")m" ;;
+        g)  printf "\033[0m\033[38;2;$(hex_color_to_rgb "$(glyph_color "$main")")m" ;;
         s)  printf "\033[0m" ;;
     esac
 }
@@ -106,7 +145,7 @@ load_palette() {
 }
 
 ### ───────────────────────────────
-###  COMMANDS (d, ff, ffpick, ffshow)
+###  COMMANDS (d, ff, ffpick, ffshow, fflight, ffdark)
 ### ───────────────────────────────
 
 # Reset to default palette
@@ -179,6 +218,8 @@ ffshow() {
     local original_col_3=$col_3
     local original_col_4=$col_4
 
+    echo -e "\033[0m[${PROMPT_BG} background mode]"
+
     local preview_env="${ENV:-☕ LOCAL}"
     local preview_conda="conda_env"
     local preview_shortpwd="~/p/bash"
@@ -192,11 +233,11 @@ ffshow() {
         IFS='|' read -r col_1 col_2 col_3 col_4 <<< "$palette_values"
 
         local LINE_1 LINE_2
-        LINE_1="$(rgb_raw $col_1 'f')╭──$(rgb_raw $col_1 'u') ::$preview_conda:: $(rgb_raw $col_1 'f')\
+        LINE_1="$(rgb_raw $col_1 'g')╭──$(rgb_raw $col_1 'u') ::$preview_conda:: $(rgb_raw $col_1 'f')\
 $(rgb_raw $col_2 'ab') $preview_env $(rgb_raw $col_2 'f')\
 $(rgb_raw $col_3 'a') $preview_shortpwd $(rgb_raw $col_3 'f')\
 $(rgb_raw $col_4 'a')  $preview_branch $(rgb_raw 's')"
-        LINE_2="$(rgb_raw $col_1 'f')╰─ >>> $(rgb_raw 's')"
+        LINE_2="$(rgb_raw $col_1 'g')╰─ >>> $(rgb_raw 's')"
 
         echo -e "${LINE_1}\033[0m\n${LINE_2}   [$name]\033[0m"
     done < "$file"
@@ -207,6 +248,18 @@ $(rgb_raw $col_4 'a')  $preview_branch $(rgb_raw 's')"
     export col_3=$original_col_3
     export col_4=$original_col_4
     echo -e "\033[0m"
+}
+
+# Retune the palette for a white-background terminal profile
+fflight() {
+    export PROMPT_BG="light"
+    prompt_cmd
+}
+
+# Back to the black-background terminal profile
+ffdark() {
+    export PROMPT_BG="dark"
+    prompt_cmd
 }
 
 ### ───────────────────────────────
@@ -247,7 +300,7 @@ prompt_cmd() {
         return
     fi
 
-    LINE_1="$(rgb_ps1 $col_1 'f')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')\
+    LINE_1="$(rgb_ps1 $col_1 'g')╭──$(rgb_ps1 $col_1 'u') ::$CONDA_ENV:: $(rgb_ps1 $col_1 'f')\
 $(rgb_ps1 $col_2 'ab') $ENV $(rgb_ps1 $col_2 'f')\
 $(rgb_ps1 $col_3 'a') $SHORT_PWD/$CURRENT_DIR $(rgb_ps1 $col_3 'f')"
 
@@ -257,7 +310,7 @@ $(rgb_ps1 $col_3 'a') $SHORT_PWD/$CURRENT_DIR $(rgb_ps1 $col_3 'f')"
         LINE_1="$LINE_1$(rgb_ps1 's')"
     fi
 
-    LINE_2="$(rgb_ps1 $col_1 'f')╰─ >>> $(rgb_ps1 's')"
+    LINE_2="$(rgb_ps1 $col_1 'g')╰─ >>> $(rgb_ps1 's')"
 
     PS1="\r\n${LINE_1}\[\033[0m\]\r\n${LINE_2}\[\033[0m\]"
 }
