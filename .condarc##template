@@ -1,7 +1,6 @@
 ssl_verify: true
 channels:
   - bioconda
-  - r
   - conda-forge
 changeps1: false
 {% if yadm.class == "ROSA" %}
