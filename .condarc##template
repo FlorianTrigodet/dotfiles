@@ -1,7 +1,7 @@
 ssl_verify: true
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
 changeps1: false
 {% if yadm.class == "ROSA" %}
 envs_dirs:
