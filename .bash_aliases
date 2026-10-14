@@ -158,7 +158,7 @@ if [[ "$rosa_server" =~ "$(uname -n)" && -z "$1" ]] || [[ $1 == "rosa" ]]; then
 	alias si="sinteractive -p mpcs_hifmb.p -n 1 --mem=15G"
 
   # easy way to remember to anvi-wokflow command
-	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -c={threads} -x\\\" --jobs FIXME --resource nodes=FIXME --latency-wait 100\" '"
+	alias snake="echo 'clusterize -n 1 -j \"workflow\" \"anvi-run-workflow -w FIXME -c config.json --additional-params --cluster \\\"clusterize -j={rule} -o={log} -c={threads} -g={resources.gpu} -p={resources.partition} -x\\\" --default-resources gpu=0 partition=mpcs_hifmb.p --set-resources colabfold_predict:partition=mpcg.p --jobs FIXME --resources nodes=FIXME gpu=FIXME --latency-wait 100\" '"
 fi
 
 
